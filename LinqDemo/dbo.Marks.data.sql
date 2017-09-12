@@ -1,0 +1,7 @@
+﻿INSERT INTO [dbo].[Marks] ([Reg_No], [Marks]) VALUES (1, 98)
+INSERT INTO [dbo].[Marks] ([Reg_No], [Marks]) VALUES (2, 34)
+INSERT INTO [dbo].[Marks] ([Reg_No], [Marks]) VALUES (3, 36)
+INSERT INTO [dbo].[Marks] ([Reg_No], [Marks]) VALUES (4, 59)
+INSERT INTO [dbo].[Marks] ([Reg_No], [Marks]) VALUES (5, 10)
+INSERT INTO [dbo].[Marks] ([Reg_No], [Marks]) VALUES (6, 85)
+INSERT INTO [dbo].[Marks] ([Reg_No], [Marks]) VALUES (7, 74)
