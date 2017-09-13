@@ -84,21 +84,6 @@ namespace DataBinding
             var bubblingDemo = new BubblingDemo();
             bubblingDemo.ShowDialog();
         }
-
-        //private void copy_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //MessageBox.Show("Copy Executed");
-        //    CommandBinding pasteCommand=new CommandBinding(ApplicationCommands.Paste);
-        //    this.CommandBindings.Add(pasteCommand);
-        //    pasteCommand.Executed += new ExecutedRoutedEventHandler(paste_Click);
-
-        //}
-
-        //private void paste_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
-
-
+        
     }
 }
