@@ -8,10 +8,10 @@ namespace Collections
 {
     public class UserDetails
     {
-        public int UserId { get; set; }
-        public string Fname { get; set; }
-        public string Lname { get; set; }      
-        public long PhoneNo { get; set; }
+        public int[] UserId { get; set; }
+        public string[] Fname { get; set; }
+        public string[] Lname { get; set; }      
+        public long[] PhoneNo { get; set; }
 
     }
 }

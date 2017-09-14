@@ -6,9 +6,55 @@
         xmlns:local="clr-namespace:Collections"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <!--<Window.Resources>
+    <DataTemplate x:Key="UserDet">
+       <DockPanel>
+           <TreeView DockPanel.Dock="Left">
+               <TreeViewItem Header="{Binding Path=UserId}"></TreeViewItem>
+           </TreeView>
+           --><!--<TreeView DockPanel.Dock="Right">
+               <TreeViewItem></TreeViewItem>
+           </TreeView>--><!--
+
+            </DockPanel>
+        
+    </DataTemplate>
+    </Window.Resources>-->
     <Grid>
-        <DataGrid ItemsSource="{Binding}">
+        <TreeView>
+            <TreeViewItem Header="{Binding Path=UserId[0]}">
+                <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Fname" Binding="{Binding Fname[0]}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Lname" Binding="{Binding Lname[0]}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="PhoneNo" Binding="{Binding PhoneNo[0]}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TreeViewItem>
+
+            <TreeViewItem Header="{Binding Path=UserId[1]}">
+                <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False">
+
+                    <DataGrid.Columns>
+                    <DataGridTextColumn Header="Fname" Binding="{Binding Fname[1]}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Lname" Binding="{Binding Lname[1]}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="PhoneNo" Binding="{Binding PhoneNo[1]}"></DataGridTextColumn>
+                </DataGrid.Columns>
+                </DataGrid>
+            </TreeViewItem>
+            <TreeViewItem Header="{Binding Path=UserId[2]}">
+                <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Fname" Binding="{Binding Fname[2]}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Lname" Binding="{Binding Lname[2]}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="PhoneNo" Binding="{Binding PhoneNo[2]}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TreeViewItem>
+        </TreeView>
+        
             
-        </DataGrid>
+        
     </Grid>
 </Window>
