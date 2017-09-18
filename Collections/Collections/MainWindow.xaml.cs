@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,24 +23,29 @@ namespace Collections
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<UserDetails> UserList { get; set; }
+
+
         public MainWindow()
         {
             InitializeComponent();
 
-            List<UserDetails> UserList = new List<UserDetails>()
+            UserList = new ObservableCollection<UserDetails>()
             {
-                //new UserDetails(){UserId = 1,Fname = "a",Lname = "b",PhoneNo=9019221911},
-                //new UserDetails(){UserId = 2,Fname = "c",Lname = "i",PhoneNo=9019286911},
-                //new UserDetails(){UserId = 3,Fname = "d",Lname = "j",PhoneNo=9258221911},
-                //new UserDetails(){UserId = 4,Fname = "e",Lname = "k",PhoneNo=9019221911},
-                //new UserDetails(){UserId = 5,Fname = "f",Lname = "l",PhoneNo=9019267911},
-                //new UserDetails(){UserId = 6,Fname = "g",Lname = "m",PhoneNo=9619451911},
-                //new UserDetails(){UserId = 7,Fname = "h",Lname = "n",PhoneNo=9819221913}
-                new UserDetails(){UserId = new int[3]{1,2,3},Fname = new string[3]{"a","b","c"},Lname = new string[3]{"d","e","f"},PhoneNo = new long[3]{123,456,789}}
+                new UserDetails(){UserId = 1,Fname = "a",Lname = "b",PhoneNo=9019221911},
+                new UserDetails(){UserId = 2,Fname = "c",Lname = "i",PhoneNo=9019286911},
+                new UserDetails(){UserId = 3,Fname = "d",Lname = "j",PhoneNo=9258221911},
+                new UserDetails(){UserId = 4,Fname = "e",Lname = "k",PhoneNo=9019221911},
+                new UserDetails(){UserId = 5,Fname = "f",Lname = "l",PhoneNo=9019267911},
+                new UserDetails(){UserId = 6,Fname = "g",Lname = "m",PhoneNo=9619451911},
+                new UserDetails(){UserId = 7,Fname = "h",Lname = "n",PhoneNo=9819221913}
+                //new UserDetails(){UserId = new int[3]{1,2,3},Fname = new string[3]{"a","b","c"},Lname = new string[3]{"d","e","f"},PhoneNo = new long[3]{123,456,789}}
             };
-           
 
+           
             DataContext = UserList;
+            Tv.ItemsSource = UserList;
+            
         }
     }
 }

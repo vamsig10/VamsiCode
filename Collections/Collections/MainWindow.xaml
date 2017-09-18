@@ -5,56 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Collections"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <!--<Window.Resources>
-    <DataTemplate x:Key="UserDet">
-       <DockPanel>
-           <TreeView DockPanel.Dock="Left">
-               <TreeViewItem Header="{Binding Path=UserId}"></TreeViewItem>
-           </TreeView>
-           --><!--<TreeView DockPanel.Dock="Right">
-               <TreeViewItem></TreeViewItem>
-           </TreeView>--><!--
+        Title="MainWindow" Height="550" Width="825"  >
 
-            </DockPanel>
-        
-    </DataTemplate>
-    </Window.Resources>-->
+
     <Grid>
-        <TreeView>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <TreeView x:Name="Tv" ItemsSource="{Binding UserList}" Grid.Column="0" >
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Path=Fname}"></TextBlock>
+                        <TextBlock Text="{Binding Path=Lname}"></TextBlock>
+                        <TextBlock Text="{Binding Path=PhoneNo}"></TextBlock>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+
+        <DataGrid Grid.Column="1" ItemsSource="{Binding}"></DataGrid>
+
+        <!--<TreeView Grid.Column="1">
             <TreeViewItem Header="{Binding Path=UserId[0]}">
-                <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Fname" Binding="{Binding Fname[0]}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Lname" Binding="{Binding Lname[0]}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="PhoneNo" Binding="{Binding PhoneNo[0]}"></DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
+                <TreeViewItem Header="{Binding Path=Fname[0]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=Lname[0]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=PhoneNo[0]}"></TreeViewItem>
+
             </TreeViewItem>
 
             <TreeViewItem Header="{Binding Path=UserId[1]}">
-                <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False">
-
-                    <DataGrid.Columns>
-                    <DataGridTextColumn Header="Fname" Binding="{Binding Fname[1]}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Lname" Binding="{Binding Lname[1]}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="PhoneNo" Binding="{Binding PhoneNo[1]}"></DataGridTextColumn>
-                </DataGrid.Columns>
-                </DataGrid>
+                <TreeViewItem Header="{Binding Path=Fname[1]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=Lname[1]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=PhoneNo[1]}"></TreeViewItem>
             </TreeViewItem>
             <TreeViewItem Header="{Binding Path=UserId[2]}">
-                <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False">
-
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Fname" Binding="{Binding Fname[2]}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Lname" Binding="{Binding Lname[2]}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="PhoneNo" Binding="{Binding PhoneNo[2]}"></DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
+                <TreeViewItem Header="{Binding Path=Fname[2]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=Lname[2]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=PhoneNo[2]}"></TreeViewItem>
             </TreeViewItem>
-        </TreeView>
-        
-            
-        
+        </TreeView>-->
+
+        <!--<DataGrid x:Name="Dg" Grid.Column="2" ItemsSource="{Binding}"  AutoGenerateColumns="False">
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Fname}"></TextBlock>
+                        <TextBlock Text="{Binding}"></TextBlock>
+                        <TextBlock Text="{Binding PhoneNo}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="UserId" Binding="{Binding [0]}"></DataGridTextColumn>
+                --><!--<DataGridTextColumn Header="Fname" Binding="{Binding Fname}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lname" Binding="{Binding}"></DataGridTextColumn>
+                <DataGridTextColumn Header="PhoneNo" Binding="{Binding PhoneNo}"></DataGridTextColumn>--><!--
+
+            </DataGrid.Columns>
+
+        </DataGrid>-->
+
+
     </Grid>
 </Window>
