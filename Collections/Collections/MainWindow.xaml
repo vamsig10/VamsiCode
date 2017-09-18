@@ -16,11 +16,13 @@
         
         <TreeView x:Name="Tv" ItemsSource="{Binding UserList}" Grid.Column="0" >
             <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Children}" DataType="{x:Type local:UserDetails}" >
+                    
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding Path=Fname}"></TextBlock>
-                        <TextBlock Text="{Binding Path=Lname}"></TextBlock>
-                        <TextBlock Text="{Binding Path=PhoneNo}"></TextBlock>
+                        <TextBlock Text="{Binding UserId}"></TextBlock>
+                        <!--<TextBlock Text="{Binding Fname}"></TextBlock>
+                        <TextBlock Text="{Binding Lname}"></TextBlock>
+                        <TextBlock Text="{Binding PhoneNo}"></TextBlock>-->
                     </StackPanel>
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>

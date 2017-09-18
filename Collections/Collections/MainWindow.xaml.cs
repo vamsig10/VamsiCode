@@ -23,29 +23,97 @@ namespace Collections
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<UserDetails> UserList { get; set; }
+        public List<UserDetails> UserList { get; set; }
 
 
         public MainWindow()
         {
             InitializeComponent();
+          
 
-            UserList = new ObservableCollection<UserDetails>()
+            List<UserDetails> UList=new List<UserDetails>();
+
+            //UserList = new ObservableCollection<UserDetails>()
+            //{
+            //    new UserDetails(){UserId = 1,Fname = "a",Lname = "b",PhoneNo=9019221911},
+            //    new UserDetails(){UserId = 2,Fname = "c",Lname = "i",PhoneNo=9019286911},
+            //    new UserDetails(){UserId = 3,Fname = "d",Lname = "j",PhoneNo=9258221911},
+            //    new UserDetails(){UserId = 4,Fname = "e",Lname = "k",PhoneNo=9019221911},
+            //    new UserDetails(){UserId = 5,Fname = "f",Lname = "l",PhoneNo=9019267911},
+            //    new UserDetails(){UserId = 6,Fname = "g",Lname = "m",PhoneNo=9619451911},
+            //    new UserDetails(){UserId = 7,Fname = "h",Lname = "n",PhoneNo=9819221913}
+            //};
+
+           UList.Add(new UserDetails()
             {
-                new UserDetails(){UserId = 1,Fname = "a",Lname = "b",PhoneNo=9019221911},
-                new UserDetails(){UserId = 2,Fname = "c",Lname = "i",PhoneNo=9019286911},
-                new UserDetails(){UserId = 3,Fname = "d",Lname = "j",PhoneNo=9258221911},
-                new UserDetails(){UserId = 4,Fname = "e",Lname = "k",PhoneNo=9019221911},
-                new UserDetails(){UserId = 5,Fname = "f",Lname = "l",PhoneNo=9019267911},
-                new UserDetails(){UserId = 6,Fname = "g",Lname = "m",PhoneNo=9619451911},
-                new UserDetails(){UserId = 7,Fname = "h",Lname = "n",PhoneNo=9819221913}
-                //new UserDetails(){UserId = new int[3]{1,2,3},Fname = new string[3]{"a","b","c"},Lname = new string[3]{"d","e","f"},PhoneNo = new long[3]{123,456,789}}
-            };
+               UserId = 1,
+                Fname = "1",
+                Lname = "b",
+                PhoneNo = 9019221911,
+                Pid = null
+           });
+            UList.Add(new UserDetails()
+            {
+                UserId = 2,
+                Fname = "c",
+                Lname = "i",
+                PhoneNo = 9019286911,
+                Pid = null
 
-           
-            DataContext = UserList;
-            Tv.ItemsSource = UserList;
-            
+            });
+            UList.Add(new UserDetails()
+            {
+                UserId = 3,
+                Fname = "d",
+                Lname = "j",
+                PhoneNo = 9258221911,
+                Pid = null
+
+            });
+            UList.Add(new UserDetails()
+            {
+                UserId = 4,
+                Fname = "e",
+                Lname = "k",
+                PhoneNo = 9019221911,
+                Pid = 1
+
+            });
+            UList.Add(new UserDetails()
+            {
+                UserId = 5,
+                Fname = "f",
+                Lname = "l",
+                PhoneNo = 9019267911,
+                Pid = 1
+
+            });
+            UList.Add(new UserDetails()
+            {
+                UserId = 6,
+                Fname = "a",
+                Lname = "b",
+                PhoneNo = 9019221911,
+                Pid = 2
+
+            });
+            UList.Add(new UserDetails()
+            {
+                UserId = 7,
+                Fname = "c",
+                Lname = "i",
+                PhoneNo = 9019286911,
+                Pid = 2
+
+            });
+
+            UList.ForEach((v => v.Children = UList.Where(u => u.Pid.Equals(v.UserId)).ToList())) ;
+            this.UserList = UList.Where(v => !v.Pid.HasValue).ToList();
+
+
+             //Tv.ItemsSource = UserList;
+            DataContext = this;
+
         }
     }
 }

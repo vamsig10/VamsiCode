@@ -15,10 +15,13 @@ namespace Collections
         public int UserId { get; set; }
         public string Fname { get; set; }
         public string Lname { get; set; }
+        
         public long PhoneNo { get; set; }
+        public int? Pid { get; set; }
 
-
-
+        public List<UserDetails> Children { get; set; }
     }
+
+   
 
 }
