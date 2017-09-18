@@ -13,22 +13,33 @@
             <ColumnDefinition Width="250"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
-        <TreeView x:Name="Tv" ItemsSource="{Binding UserList}" Grid.Column="0" >
+
+        <TreeView x:Name="Tv"  Grid.Column="0" ItemsSource="{Binding UserList}" SelectedItemChanged="OnTreeViewItemChanged" >
             <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Children}" DataType="{x:Type local:UserDetails}" >
+                <HierarchicalDataTemplate x:Name="Hdt" ItemsSource="{Binding Children}" DataType="{x:Type local:UserDetails}" >
                     
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding UserId}"></TextBlock>
-                        <!--<TextBlock Text="{Binding Fname}"></TextBlock>
+                        <TextBlock Text="{Binding UserId, Mode=TwoWay}"></TextBlock>
+                        <TextBlock Text="{Binding Fname}"></TextBlock>
                         <TextBlock Text="{Binding Lname}"></TextBlock>
-                        <TextBlock Text="{Binding PhoneNo}"></TextBlock>-->
+                        <TextBlock Text="{Binding PhoneNo}"></TextBlock>
                     </StackPanel>
+                    <!--<HierarchicalDataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsSe}" Property=>
+                            
+                        </DataTrigger>
+                    </HierarchicalDataTemplate.Triggers>-->
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
-        </TreeView>
+            <TreeView.Resources>
+                
 
-        <DataGrid Grid.Column="1" ItemsSource="{Binding}"></DataGrid>
+            </TreeView.Resources>
+        </TreeView>
+        
+        
+
+        <DataGrid x:Name="Dg" Grid.Column="1" ItemsSource="{Binding UserList}"></DataGrid>
 
         <!--<TreeView Grid.Column="1">
             <TreeViewItem Header="{Binding Path=UserId[0]}">

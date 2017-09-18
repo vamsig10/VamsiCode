@@ -47,7 +47,7 @@ namespace Collections
            UList.Add(new UserDetails()
             {
                UserId = 1,
-                Fname = "1",
+                Fname = "a",
                 Lname = "b",
                 PhoneNo = 9019221911,
                 Pid = null
@@ -110,10 +110,15 @@ namespace Collections
             UList.ForEach((v => v.Children = UList.Where(u => u.Pid.Equals(v.UserId)).ToList())) ;
             this.UserList = UList.Where(v => !v.Pid.HasValue).ToList();
 
+           
 
-             //Tv.ItemsSource = UserList;
+            //Tv.ItemsSource = UserList;
             DataContext = this;
 
+        }
+        public void OnTreeViewItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            Dg.SelectedItem = e.NewValue;
         }
     }
 }
