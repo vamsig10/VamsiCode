@@ -24,12 +24,11 @@ namespace Collections
     public partial class MainWindow : Window
     {
         public List<UserDetails> UserList { get; set; }
-
+        public string str { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-          
 
             List<UserDetails> UList=new List<UserDetails>();
 
@@ -119,6 +118,18 @@ namespace Collections
         public void OnTreeViewItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             Dg.SelectedItem = e.NewValue;
+        }
+
+        private void b2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void b1_Click(object sender, RoutedEventArgs e)
+        {
+            BindingExpression b = Tv.GetBindingExpression(TextBox.TextProperty);
+            b.UpdateSource();
+            
         }
     }
 }

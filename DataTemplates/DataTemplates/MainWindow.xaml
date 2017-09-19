@@ -10,7 +10,7 @@
     <DataTemplate x:Key="EmpTemp">
 
             <StackPanel Orientation = "Horizontal">
-                <Label x:Name="Label1" Content="jgdcjhcd"></Label>
+                <Label x:Name="Label1" Content="Fname"></Label>
                 <TextBox Text = "{Binding Path= Fname, Mode = TwoWay}" 
                      Width = "100" Margin = "3 5 3 5"/>
 
@@ -18,7 +18,7 @@
                     Width = "100" Margin = "0 5 3 5"/>
             </StackPanel>
         <DataTemplate.Triggers>
-            <DataTrigger Binding="{Binding Fname}" Value="Trigger">
+            <DataTrigger Binding="{Binding Fname}" Value="aa">
                 <Setter TargetName="Label1" Property="Content" Value="Triggered"></Setter>
             </DataTrigger>
 

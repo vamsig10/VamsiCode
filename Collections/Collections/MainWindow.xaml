@@ -13,22 +13,25 @@
             <ColumnDefinition Width="250"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
 
-        <TreeView x:Name="Tv"  Grid.Column="0" ItemsSource="{Binding UserList}" SelectedItemChanged="OnTreeViewItemChanged" >
+        </Grid.RowDefinitions>
+
+        <TreeView x:Name="Tv"  Grid.Column="0" Grid.Row="0" ItemsSource="{Binding UserList, UpdateSourceTrigger=Explicit}" SelectedItemChanged="OnTreeViewItemChanged" >
+          
+            
             <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate x:Name="Hdt" ItemsSource="{Binding Children}" DataType="{x:Type local:UserDetails}" >
-                    
+                <HierarchicalDataTemplate x:Name="Hdt" ItemsSource="{Binding Children}"  DataType="{x:Type local:UserDetails}">
+
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding UserId, Mode=TwoWay}"></TextBlock>
-                        <TextBlock Text="{Binding Fname}"></TextBlock>
-                        <TextBlock Text="{Binding Lname}"></TextBlock>
-                        <TextBlock Text="{Binding PhoneNo}"></TextBlock>
+                        <TextBox BorderThickness="0" Text="{Binding UserId }" ></TextBox>
+                        <TextBox BorderThickness="0" Text="{Binding Fname  }"></TextBox>
+                        <TextBox BorderThickness="0" Text="{Binding Lname  }"></TextBox>
+                        <TextBox BorderThickness="0" Text="{Binding PhoneNo}"></TextBox>
                     </StackPanel>
-                    <!--<HierarchicalDataTemplate.Triggers>
-                        <DataTrigger Binding="{Binding Path=IsSe}" Property=>
-                            
-                        </DataTrigger>
-                    </HierarchicalDataTemplate.Triggers>-->
+                
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
             <TreeView.Resources>
@@ -36,10 +39,14 @@
 
             </TreeView.Resources>
         </TreeView>
-        
-        
+        <Button x:Name="b1" Content="Apply" Height="30" Width="45" Grid.Column="0"  Grid.Row="1" Margin="47,41,158,188" Click="b1_Click" ></Button>
+        <!--<TextBox Grid.Column="1" Height="50" Grid.Row="1" Margin="78,77,171,133" Text="{Binding str,UpdateSourceTrigger=Explicit}"></TextBox>-->
+        <Button x:Name="b2" Content="Apply" Height="30" Width="45" Grid.Column="1"  Grid.Row="1" Margin="47,41,158,188" Click="b2_Click"  ></Button>
 
-        <DataGrid x:Name="Dg" Grid.Column="1" ItemsSource="{Binding UserList}"></DataGrid>
+        <DataGrid x:Name="Dg" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding UserList,UpdateSourceTrigger=Explicit }"  SelectedItem="{Binding ElementName=Hdt,Path=SelectedValue }" SelectionMode="Extended" SelectionUnit="FullRow">
+          
+            
+        </DataGrid>
 
         <!--<TreeView Grid.Column="1">
             <TreeViewItem Header="{Binding Path=UserId[0]}">
@@ -84,3 +91,4 @@
 
     </Grid>
 </Window>
+
