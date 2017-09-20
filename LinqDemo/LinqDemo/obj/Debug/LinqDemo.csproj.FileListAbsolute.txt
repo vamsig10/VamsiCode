@@ -1,7 +1,0 @@
-c:\users\vamsi.gamidi\source\repos\LinqDemo\LinqDemo\bin\Debug\LinqDemo.exe.config
-c:\users\vamsi.gamidi\source\repos\LinqDemo\LinqDemo\bin\Debug\LinqDemo.exe
-c:\users\vamsi.gamidi\source\repos\LinqDemo\LinqDemo\bin\Debug\LinqDemo.pdb
-c:\users\vamsi.gamidi\source\repos\LinqDemo\LinqDemo\obj\Debug\LinqDemo.csproj.CoreCompileInputs.cache
-c:\users\vamsi.gamidi\source\repos\LinqDemo\LinqDemo\obj\Debug\LinqDemo.exe
-c:\users\vamsi.gamidi\source\repos\LinqDemo\LinqDemo\obj\Debug\LinqDemo.pdb
-C:\Users\vamsi.gamidi\source\repos\LinqDemo\LinqDemo\obj\Debug\LinqDemo.csprojResolveAssemblyReference.cache

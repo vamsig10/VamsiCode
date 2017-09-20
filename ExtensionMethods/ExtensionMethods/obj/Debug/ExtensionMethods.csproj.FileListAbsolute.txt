@@ -1,7 +1,0 @@
-c:\users\vamsi.gamidi\source\repos\ExtensionMethods\ExtensionMethods\bin\Debug\ExtensionMethods.exe.config
-c:\users\vamsi.gamidi\source\repos\ExtensionMethods\ExtensionMethods\bin\Debug\ExtensionMethods.exe
-c:\users\vamsi.gamidi\source\repos\ExtensionMethods\ExtensionMethods\bin\Debug\ExtensionMethods.pdb
-c:\users\vamsi.gamidi\source\repos\ExtensionMethods\ExtensionMethods\obj\Debug\ExtensionMethods.csprojResolveAssemblyReference.cache
-c:\users\vamsi.gamidi\source\repos\ExtensionMethods\ExtensionMethods\obj\Debug\ExtensionMethods.csproj.CoreCompileInputs.cache
-c:\users\vamsi.gamidi\source\repos\ExtensionMethods\ExtensionMethods\obj\Debug\ExtensionMethods.exe
-c:\users\vamsi.gamidi\source\repos\ExtensionMethods\ExtensionMethods\obj\Debug\ExtensionMethods.pdb
