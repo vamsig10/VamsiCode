@@ -1,8 +1,0 @@
-﻿INSERT INTO [dbo].[IPL] ([Id], [Name], [Age], [Role], [Franchise]) VALUES (1, N'Vamsi Gamidi', 20, N'Batsman', N'MI')
-INSERT INTO [dbo].[IPL] ([Id], [Name], [Age], [Role], [Franchise]) VALUES (2, N'Rohit', 30, N'Batsman', N'MI')
-INSERT INTO [dbo].[IPL] ([Id], [Name], [Age], [Role], [Franchise]) VALUES (3, N'Yuvraj', 35, N'Allrounder', N'SRH')
-INSERT INTO [dbo].[IPL] ([Id], [Name], [Age], [Role], [Franchise]) VALUES (4, N'Bhuvi', 26, N'Bowler', N'SRH')
-INSERT INTO [dbo].[IPL] ([Id], [Name], [Age], [Role], [Franchise]) VALUES (5, N'Kane Williamson', 28, N'Batsman', N'SRH')
-INSERT INTO [dbo].[IPL] ([Id], [Name], [Age], [Role], [Franchise]) VALUES (6, N'Virat', 28, N'Batsman', N'RCB')
-INSERT INTO [dbo].[IPL] ([Id], [Name], [Age], [Role], [Franchise]) VALUES (7, N'Stokes', 27, N'Allrounder', N'RPS')
-INSERT INTO [dbo].[IPL] ([Id], [Name], [Age], [Role], [Franchise]) VALUES (8, N'Quinton Decock', 25, N'Wicket Keeper', N'DD')
