@@ -1,0 +1,136 @@
+﻿<Window x:Class="Collections.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Collections"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="850" Width="1025" x:Name="rootWindow" >
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <TreeView x:Name="Tv"  Grid.Column="0" Grid.Row="0" ItemsSource="{Binding UserList, UpdateSourceTrigger=Explicit}" SelectedItemChanged="OnTreeViewItemChanged" >
+
+
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate x:Name="Hdt" ItemsSource="{Binding Children}" >
+
+                    <StackPanel Orientation="Vertical">
+                        <TextBox BorderThickness="0" Text="{Binding UserId }" ></TextBox>
+                        <!--<TextBox BorderThickness="0" Text="{Binding Fname }"></TextBox>
+                        <TextBox BorderThickness="0" Text="{Binding Lname  }"></TextBox>
+                        <TextBox BorderThickness="0" Text="{Binding PhoneNo}"></TextBox>-->
+                    </StackPanel>
+
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+            <TreeView.Resources>
+
+
+            </TreeView.Resources>
+        </TreeView>
+        <Button x:Name="b1" Content="Apply" Height="30" Width="45" Grid.Column="0"  Grid.Row="1" Margin="47,41,158,188" Click="b1_Click" ></Button>
+        <!--<TextBox Grid.Column="1" Height="50" Grid.Row="1" Margin="78,77,171,133" Text="{Binding str,UpdateSourceTrigger=Explicit}"></TextBox>-->
+        <Button x:Name="b2" Content="Apply" Height="30" Width="45" Grid.Column="1"  Grid.Row="1" Margin="47,41,158,188" Click="b2_Click"  ></Button>
+
+        <DataGrid IsReadOnly="False" x:Name="Dg" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding UserList }" AutoGenerateColumns="False" SelectedItem="{Binding ElementName=Hdt,Path=SelectedValue }" SelectionMode="Extended" SelectionUnit="FullRow">
+
+            <DataGrid.Columns>
+                <!--<DataGridTextColumn x:Name="Dg1" Header="UserID" Binding="{Binding UserId,UpdateSourceTrigger=Explicit,Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Dg2" Header="Fname" Binding="{Binding Fname,UpdateSourceTrigger=Explicit,Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Dg3" Header="Lname" Binding="{Binding Lname,UpdateSourceTrigger=Explicit}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="Dg4" Header="Phone No" Binding="{Binding PhoneNo,UpdateSourceTrigger=Explicit}"></DataGridTextColumn>-->
+                <DataGridTemplateColumn Header="UserID" x:Name="C1">
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate x:Name="dt">
+                            <TextBox x:Name="tb1" Text="{Binding Path=UserId,Mode=TwoWay,UpdateSourceTrigger=Explicit}"></TextBox>
+
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Fname" >
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+                            <TextBox x:Name="tb2" Text="{Binding Fname,Mode=TwoWay,UpdateSourceTrigger=Explicit}"></TextBox>
+
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Lname" >
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+                            <TextBox x:Name="tb3" Text="{Binding Lname}"></TextBox>
+
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Phone No" >
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+                            <TextBox x:Name="tb4" Text="{Binding PhoneNo}"></TextBox>
+
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--<TreeView Grid.Column="1">
+            <TreeViewItem Header="{Binding Path=UserId[0]}">
+                <TreeViewItem Header="{Binding Path=Fname[0]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=Lname[0]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=PhoneNo[0]}"></TreeViewItem>
+
+            </TreeViewItem>
+
+            <TreeViewItem Header="{Binding Path=UserId[1]}">
+                <TreeViewItem Header="{Binding Path=Fname[1]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=Lname[1]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=PhoneNo[1]}"></TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="{Binding Path=UserId[2]}">
+                <TreeViewItem Header="{Binding Path=Fname[2]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=Lname[2]}"></TreeViewItem>
+                <TreeViewItem Header="{Binding Path=PhoneNo[2]}"></TreeViewItem>
+            </TreeViewItem>
+        </TreeView>-->
+
+
+        <DataGrid Grid.Row="2" Grid.Column="0" AutoGenerateColumns="False" ItemsSource="{Binding UserList}" IsReadOnly="False" >
+            <DataGrid.Columns >
+                <DataGridTemplateColumn Header="UserId">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding ElementName=rootWindow,Path= UserList}" DisplayMemberPath="UserId"></ComboBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Fname"  Binding="{Binding Fname}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

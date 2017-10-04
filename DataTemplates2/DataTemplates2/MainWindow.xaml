@@ -1,0 +1,23 @@
+﻿<Window x:Class="DataTemplates2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataTemplates2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+       
+        <DataTemplate x:Key="PlaDet">
+            <StackPanel>
+                <Label Content="Label1"></Label>
+                <TextBox x:Name="TbName" Text="{Binding Fname,Mode=TwoWay}"></TextBox>
+                <TextBox x:Name="TbNo" Text="{Binding Path=JerseyNo,Mode=TwoWay}"></TextBox>
+            </StackPanel>
+           
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="Dg" DataContext="{Binding Path=PlaList,Mode=TwoWay}" ItemsSource="{Binding}" ItemTemplate="{StaticResource PlaDet}"></DataGrid>
+    </Grid>
+</Window>

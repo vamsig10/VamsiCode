@@ -1,0 +1,19 @@
+﻿<Window x:Class="MvvmDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvmDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+  
+    <StackPanel>
+        <Button x:Name="B1" Content="Button" Click="B1_OnClick"></Button>
+        <DataGrid x:Name="EmpGrid" ItemsSource="{Binding Dr}"></DataGrid>
+        <!--<TextBox x:Name="Fname" HorizontalAlignment="Left" Height="23" Margin="209,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Fname_TextChanged"/>
+        <TextBox x:Name="Lname" HorizontalAlignment="Left" Height="23" Margin="209,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Salary" HorizontalAlignment="Left" Height="23" Margin="209,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>-->
+
+
+    </StackPanel>
+</Window>
