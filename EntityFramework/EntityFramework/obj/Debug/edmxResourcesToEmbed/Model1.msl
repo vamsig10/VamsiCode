@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Vamsi_Gamidi_DBModelStoreContainer" CdmEntityContainer="Vamsi_Gamidi_DBEntities">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="Vamsi_Gamidi_DBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Franchises">
+      <EntityTypeMapping TypeName="Vamsi_Gamidi_DBModel.Franchise">
+        <MappingFragment StoreEntitySet="Franchise">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Franchise1" ColumnName="Franchise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IPLs">
+      <EntityTypeMapping TypeName="Vamsi_Gamidi_DBModel.IPL">
+        <MappingFragment StoreEntitySet="IPL">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Franchise" ColumnName="Franchise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movie_Details">
+      <EntityTypeMapping TypeName="Vamsi_Gamidi_DBModel.Movie_Details">
+        <MappingFragment StoreEntitySet="Movie_Details">
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+          <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
+          <ScalarProperty Name="Movie_Release_Date" ColumnName="Movie_Release_Date" />
+          <ScalarProperty Name="Movie_Colections" ColumnName="Movie_Colections" />
+          <ScalarProperty Name="Movie_Poster" ColumnName="Movie_Poster" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="Vamsi_Gamidi_DBModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+          <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
+          <ScalarProperty Name="Movie_Release_Date" ColumnName="Movie_Release_Date" />
+          <ScalarProperty Name="Movie_Colections" ColumnName="Movie_Colections" />
+          <ScalarProperty Name="Movie_Poster" ColumnName="Movie_Poster" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Theatres">
+      <EntityTypeMapping TypeName="Vamsi_Gamidi_DBModel.Theatre">
+        <MappingFragment StoreEntitySet="Theatres">
+          <ScalarProperty Name="Theatre_Id" ColumnName="Theatre_Id" />
+          <ScalarProperty Name="Theatre_Name" ColumnName="Theatre_Name" />
+          <ScalarProperty Name="Theatre_Location" ColumnName="Theatre_Location" />
+          <ScalarProperty Name="Theatre_Movie_MShow" ColumnName="Theatre_Movie_MShow" />
+          <ScalarProperty Name="Theatre_Movie_Matinee" ColumnName="Theatre_Movie_Matinee" />
+          <ScalarProperty Name="Theatre_Movie_FShow" ColumnName="Theatre_Movie_FShow" />
+          <ScalarProperty Name="Theatre_Movie_SShow" ColumnName="Theatre_Movie_SShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

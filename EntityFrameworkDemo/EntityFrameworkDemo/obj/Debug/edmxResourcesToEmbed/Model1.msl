@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+    <EntitySetMapping Name="Account_details">
+      <EntityTypeMapping TypeName="masterModel.Account_details">
+        <MappingFragment StoreEntitySet="Account_details">
+          <ScalarProperty Name="Account_Id" ColumnName="Account_Id" />
+          <ScalarProperty Name="Deposits" ColumnName="Deposits" />
+          <ScalarProperty Name="Account_No" ColumnName="Account_No" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="masterModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BANK_DETAILS">
+      <EntityTypeMapping TypeName="masterModel.BANK_DETAILS">
+        <MappingFragment StoreEntitySet="BANK_DETAILS">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Pan" ColumnName="Pan" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City_srk_vam">
+      <EntityTypeMapping TypeName="masterModel.City_srk_vam">
+        <MappingFragment StoreEntitySet="City_srk_vam">
+          <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Credit_details">
+      <EntityTypeMapping TypeName="masterModel.Credit_details">
+        <MappingFragment StoreEntitySet="Credit_details">
+          <ScalarProperty Name="Credit_Id" ColumnName="Credit_Id" />
+          <ScalarProperty Name="CreditCard_No" ColumnName="CreditCard_No" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor_details">
+      <EntityTypeMapping TypeName="masterModel.Doctor_details">
+        <MappingFragment StoreEntitySet="Doctor_details">
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor_srk">
+      <EntityTypeMapping TypeName="masterModel.Doctor_srk">
+        <MappingFragment StoreEntitySet="Doctor_srk">
+          <ScalarProperty Name="DName" ColumnName="DName" />
+          <ScalarProperty Name="speciality" ColumnName="speciality" />
+          <ScalarProperty Name="Did" ColumnName="Did" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors_H">
+      <EntityTypeMapping TypeName="masterModel.Doctors_H">
+        <MappingFragment StoreEntitySet="Doctors_H">
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Doctor_name" ColumnName="Doctor_name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Dealing_with" ColumnName="Dealing_with" />
+          <ScalarProperty Name="max_consultation" ColumnName="max_consultation" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="File_Harika">
+      <EntityTypeMapping TypeName="masterModel.File_Harika">
+        <MappingFragment StoreEntitySet="File_Harika">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="sourcepath" ColumnName="sourcepath" />
+          <ScalarProperty Name="size" ColumnName="size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="H_Billdetails">
+      <EntityTypeMapping TypeName="masterModel.H_Billdetails">
+        <MappingFragment StoreEntitySet="H_Billdetails">
+          <ScalarProperty Name="Bill_No" ColumnName="Bill_No" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Admission_date" ColumnName="Admission_date" />
+          <ScalarProperty Name="Discharge_date" ColumnName="Discharge_date" />
+          <ScalarProperty Name="Room_charges" ColumnName="Room_charges" />
+          <ScalarProperty Name="pathology_fee" ColumnName="pathology_fee" />
+          <ScalarProperty Name="doctor_fee" ColumnName="doctor_fee" />
+          <ScalarProperty Name="miscellaneous" ColumnName="miscellaneous" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="H_Doctor">
+      <EntityTypeMapping TypeName="masterModel.H_Doctor">
+        <MappingFragment StoreEntitySet="H_Doctor">
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="No_of_patient_assigned" ColumnName="No_of_patient_assigned" />
+          <ScalarProperty Name="Max_Consultation" ColumnName="Max_Consultation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="H_Patient">
+      <EntityTypeMapping TypeName="masterModel.H_Patient">
+        <MappingFragment StoreEntitySet="H_Patient">
+          <ScalarProperty Name="Patient_No" ColumnName="Patient_No" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Contact_no" ColumnName="Contact_no" />
+          <ScalarProperty Name="Room_no" ColumnName="Room_no" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="Patient_Type" ColumnName="Patient_Type" />
+          <ScalarProperty Name="Symptoms" ColumnName="Symptoms" />
+          <ScalarProperty Name="Medicines" ColumnName="Medicines" />
+          <ScalarProperty Name="Tests" ColumnName="Tests" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Harshita_Movie_booking">
+      <EntityTypeMapping TypeName="masterModel.Harshita_Movie_booking">
+        <MappingFragment StoreEntitySet="Harshita_Movie_booking">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
+          <ScalarProperty Name="Theatre_Id" ColumnName="Theatre_Id" />
+          <ScalarProperty Name="Show_Timing" ColumnName="Show_Timing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Harshita_Movies">
+      <EntityTypeMapping TypeName="masterModel.Harshita_Movies">
+        <MappingFragment StoreEntitySet="Harshita_Movies">
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie Id" />
+          <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+          <ScalarProperty Name="Release_Year" ColumnName="Release_Year" />
+          <ScalarProperty Name="BoxOffice_Collection" ColumnName="BoxOffice_Collection" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Harshita_Patient_details">
+      <EntityTypeMapping TypeName="masterModel.Harshita_Patient_details">
+        <MappingFragment StoreEntitySet="Harshita_Patient_details">
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Room_No" ColumnName="Room_No" />
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Harshita_Theatres">
+      <EntityTypeMapping TypeName="masterModel.Harshita_Theatres">
+        <MappingFragment StoreEntitySet="Harshita_Theatres">
+          <ScalarProperty Name="Theatre_Id" ColumnName="Theatre_Id" />
+          <ScalarProperty Name="Theatre_Name" ColumnName="Theatre_Name" />
+          <ScalarProperty Name="Theatre_city" ColumnName="Theatre_city" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="movie_nithin">
+      <EntityTypeMapping TypeName="masterModel.movie_nithin">
+        <MappingFragment StoreEntitySet="movie_nithin">
+          <ScalarProperty Name="MovieId" ColumnName="MovieId" />
+          <ScalarProperty Name="Moviename" ColumnName="Moviename" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="BoxOfficeCollection" ColumnName="BoxOfficeCollection" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovieShow_harika">
+      <EntityTypeMapping TypeName="masterModel.MovieShow_harika">
+        <MappingFragment StoreEntitySet="MovieShow_harika">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+          <ScalarProperty Name="MorningShow" ColumnName="MorningShow" />
+          <ScalarProperty Name="NoonShow" ColumnName="NoonShow" />
+          <ScalarProperty Name="FirstShow" ColumnName="FirstShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovieTheatre_Harika">
+      <EntityTypeMapping TypeName="masterModel.MovieTheatre_Harika">
+        <MappingFragment StoreEntitySet="MovieTheatre_Harika">
+          <ScalarProperty Name="MovieId" ColumnName="MovieId" />
+          <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+          <ScalarProperty Name="TheatreName" ColumnName="TheatreName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nithin_movies">
+      <EntityTypeMapping TypeName="masterModel.nithin_movy">
+        <MappingFragment StoreEntitySet="nithin movies">
+          <ScalarProperty Name="MId" ColumnName="MId" />
+          <ScalarProperty Name="Mname" ColumnName="Mname" />
+          <ScalarProperty Name="Mrelease" ColumnName="Mrelease" />
+          <ScalarProperty Name="Mcoll" ColumnName="Mcoll" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="masterModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Patient_name" ColumnName="Patient_name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Problem_Type" ColumnName="Problem_Type" />
+          <ScalarProperty Name="Last_Vist" ColumnName="Last_Vist" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_H">
+      <EntityTypeMapping TypeName="masterModel.Patient_H">
+        <MappingFragment StoreEntitySet="Patient_H">
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Patient_name" ColumnName="Patient_name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Problem_Type" ColumnName="Problem_Type" />
+          <ScalarProperty Name="Doctor_id" ColumnName="Doctor_id" />
+          <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlaceTheatre_Harika">
+      <EntityTypeMapping TypeName="masterModel.PlaceTheatre_Harika">
+        <MappingFragment StoreEntitySet="PlaceTheatre_Harika">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TheatreName" ColumnName="TheatreName" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prabhucityTables">
+      <EntityTypeMapping TypeName="masterModel.prabhucityTable">
+        <MappingFragment StoreEntitySet="prabhucityTable">
+          <ScalarProperty Name="city_Id" ColumnName="city_Id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prabhufolderlistTables">
+      <EntityTypeMapping TypeName="masterModel.prabhufolderlistTable">
+        <MappingFragment StoreEntitySet="prabhufolderlistTable">
+          <ScalarProperty Name="folder_Id" ColumnName="folder_Id" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_size" ColumnName="item_size" />
+          <ScalarProperty Name="item_directory_name" ColumnName="item_directory_name" />
+          <ScalarProperty Name="item_full_name" ColumnName="item_full_name" />
+          <ScalarProperty Name="item_extension" ColumnName="item_extension" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prabhumovieTables">
+      <EntityTypeMapping TypeName="masterModel.prabhumovieTable">
+        <MappingFragment StoreEntitySet="prabhumovieTable">
+          <ScalarProperty Name="Movie_id" ColumnName="Movie_id" />
+          <ScalarProperty Name="movie_name" ColumnName="movie_name" />
+          <ScalarProperty Name="Movie_release_date" ColumnName="Movie_release_date" />
+          <ScalarProperty Name="movie_poster" ColumnName="movie_poster" />
+          <ScalarProperty Name="movie_collections" ColumnName="movie_collections" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prabhutheatreTables">
+      <EntityTypeMapping TypeName="masterModel.prabhutheatreTable">
+        <MappingFragment StoreEntitySet="prabhutheatreTable">
+          <ScalarProperty Name="theatre_id" ColumnName="theatre_id" />
+          <ScalarProperty Name="theatre_name" ColumnName="theatre_name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prabhuTimeTables">
+      <EntityTypeMapping TypeName="masterModel.prabhuTimeTable">
+        <MappingFragment StoreEntitySet="prabhuTimeTable">
+          <ScalarProperty Name="Time_id" ColumnName="Time_id" />
+          <ScalarProperty Name="show_timings" ColumnName="show_timings" />
+          <ScalarProperty Name="theatre_id" ColumnName="theatre_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Room_Details">
+      <EntityTypeMapping TypeName="masterModel.Room_Details">
+        <MappingFragment StoreEntitySet="Room_Details">
+          <ScalarProperty Name="Room_No" ColumnName="Room_No" />
+          <ScalarProperty Name="Room_Type" ColumnName="Room_Type" />
+          <ScalarProperty Name="Vacancy" ColumnName="Vacancy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rp_Doctor">
+      <EntityTypeMapping TypeName="masterModel.rp_Doctor">
+        <MappingFragment StoreEntitySet="rp_Doctor">
+          <ScalarProperty Name="D_Id" ColumnName="D_Id" />
+          <ScalarProperty Name="Doctor_Name" ColumnName="Doctor_Name" />
+          <ScalarProperty Name="specialization" ColumnName="specialization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="masterModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Room_No" ColumnName="Room_No" />
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableDoctors_Harika">
+      <EntityTypeMapping TypeName="masterModel.TableDoctors_Harika">
+        <MappingFragment StoreEntitySet="TableDoctors_Harika">
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="dname" ColumnName="dname" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="specialization" ColumnName="specialization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TablePatients_Harika">
+      <EntityTypeMapping TypeName="masterModel.TablePatients_Harika">
+        <MappingFragment StoreEntitySet="TablePatients_Harika">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="diagnosis" ColumnName="diagnosis" />
+          <ScalarProperty Name="did" ColumnName="did" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Theatre_svn">
+      <EntityTypeMapping TypeName="masterModel.Theatre_svn">
+        <MappingFragment StoreEntitySet="Theatre_svn">
+          <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+          <ScalarProperty Name="Theatre_Id" ColumnName="Theatre_Id" />
+          <ScalarProperty Name="Theatre_Name" ColumnName="Theatre_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timing_svn">
+      <EntityTypeMapping TypeName="masterModel.Timing_svn">
+        <MappingFragment StoreEntitySet="Timing_svn">
+          <ScalarProperty Name="Theatre_Id" ColumnName="Theatre_Id" />
+          <ScalarProperty Name="Timings" ColumnName="Timings" />
+          <ScalarProperty Name="Timings_Id" ColumnName="Timings_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies_Harika">
+      <EntityTypeMapping TypeName="masterModel.Movies_Harika">
+        <MappingFragment StoreEntitySet="Movies_Harika">
+          <ScalarProperty Name="MovieId" ColumnName="MovieId" />
+          <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+          <ScalarProperty Name="BoxOffice" ColumnName="BoxOffice" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MSreplication_options">
+      <EntityTypeMapping TypeName="masterModel.MSreplication_options">
+        <MappingFragment StoreEntitySet="MSreplication_options">
+          <ScalarProperty Name="optname" ColumnName="optname" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="major_version" ColumnName="major_version" />
+          <ScalarProperty Name="minor_version" ColumnName="minor_version" />
+          <ScalarProperty Name="revision" ColumnName="revision" />
+          <ScalarProperty Name="install_failures" ColumnName="install_failures" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_details">
+      <EntityTypeMapping TypeName="masterModel.Patient_details">
+        <MappingFragment StoreEntitySet="Patient_details">
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Room_No" ColumnName="Room_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rp_Patient">
+      <EntityTypeMapping TypeName="masterModel.rp_Patient">
+        <MappingFragment StoreEntitySet="rp_Patient">
+          <ScalarProperty Name="P_Id" ColumnName="P_Id" />
+          <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Room_No" ColumnName="Room_No" />
+          <ScalarProperty Name="Symptom" ColumnName="Symptom" />
+          <ScalarProperty Name="D_Id" ColumnName="D_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_db">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_db">
+        <MappingFragment StoreEntitySet="spt_fallback_db">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_dbid" ColumnName="xfallback_dbid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dbid" ColumnName="dbid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_dev">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_dev">
+        <MappingFragment StoreEntitySet="spt_fallback_dev">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_low" ColumnName="xfallback_low" />
+          <ScalarProperty Name="xfallback_drive" ColumnName="xfallback_drive" />
+          <ScalarProperty Name="low" ColumnName="low" />
+          <ScalarProperty Name="high" ColumnName="high" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="phyname" ColumnName="phyname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_fallback_usg">
+      <EntityTypeMapping TypeName="masterModel.spt_fallback_usg">
+        <MappingFragment StoreEntitySet="spt_fallback_usg">
+          <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+          <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+          <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+          <ScalarProperty Name="xfallback_vstart" ColumnName="xfallback_vstart" />
+          <ScalarProperty Name="dbid" ColumnName="dbid" />
+          <ScalarProperty Name="segmap" ColumnName="segmap" />
+          <ScalarProperty Name="lstart" ColumnName="lstart" />
+          <ScalarProperty Name="sizepg" ColumnName="sizepg" />
+          <ScalarProperty Name="vstart" ColumnName="vstart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_monitor">
+      <EntityTypeMapping TypeName="masterModel.spt_monitor">
+        <MappingFragment StoreEntitySet="spt_monitor">
+          <ScalarProperty Name="lastrun" ColumnName="lastrun" />
+          <ScalarProperty Name="cpu_busy" ColumnName="cpu_busy" />
+          <ScalarProperty Name="io_busy" ColumnName="io_busy" />
+          <ScalarProperty Name="idle" ColumnName="idle" />
+          <ScalarProperty Name="pack_received" ColumnName="pack_received" />
+          <ScalarProperty Name="pack_sent" ColumnName="pack_sent" />
+          <ScalarProperty Name="connections" ColumnName="connections" />
+          <ScalarProperty Name="pack_errors" ColumnName="pack_errors" />
+          <ScalarProperty Name="total_read" ColumnName="total_read" />
+          <ScalarProperty Name="total_write" ColumnName="total_write" />
+          <ScalarProperty Name="total_errors" ColumnName="total_errors" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spt_values">
+      <EntityTypeMapping TypeName="masterModel.spt_values">
+        <MappingFragment StoreEntitySet="spt_values">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="low" ColumnName="low" />
+          <ScalarProperty Name="high" ColumnName="high" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_MScleanupmergepublisher" FunctionName="masterModel.Store.sp_MScleanupmergepublisher" />
+    <FunctionImportMapping FunctionImportName="sp_MSrepl_startup" FunctionName="masterModel.Store.sp_MSrepl_startup" />
+  </EntityContainerMapping>
+</Mapping>

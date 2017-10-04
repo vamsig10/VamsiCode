@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account_details">
+    <Key>
+      <PropertyRef Name="Account_Id" />
+    </Key>
+    <Property Name="Account_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Deposits" Type="int" Nullable="false" />
+    <Property Name="Account_No" Type="int" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BANK_DETAILS">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" Nullable="false" />
+    <Property Name="Pan" Type="varchar(max)" Nullable="false" />
+    <Property Name="Password" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City_srk_vam">
+    <Key>
+      <PropertyRef Name="CITY_ID" />
+    </Key>
+    <Property Name="CITY_NAME" Type="varchar(max)" Nullable="false" />
+    <Property Name="CITY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Credit_details">
+    <Key>
+      <PropertyRef Name="Credit_Id" />
+    </Key>
+    <Property Name="Credit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreditCard_No" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Doctor_details">
+    <Key>
+      <PropertyRef Name="Doctor_Id" />
+    </Key>
+    <Property Name="Doctor_Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Designation" Type="varchar(max)" Nullable="false" />
+    <Property Name="Specialization" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Doctor_srk">
+    <Key>
+      <PropertyRef Name="Did" />
+    </Key>
+    <Property Name="DName" Type="char" MaxLength="50" />
+    <Property Name="speciality" Type="char" MaxLength="50" />
+    <Property Name="Did" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Doctors_H">
+    <Key>
+      <PropertyRef Name="Doctor_Id" />
+    </Key>
+    <Property Name="Doctor_Id" Type="int" Nullable="false" />
+    <Property Name="Doctor_name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Designation" Type="varchar(max)" Nullable="false" />
+    <Property Name="Degree" Type="varchar(max)" Nullable="false" />
+    <Property Name="Dealing_with" Type="varchar(max)" Nullable="false" />
+    <Property Name="max_consultation" Type="int" Nullable="false" />
+    <Property Name="Password" Type="int" Nullable="false" />
+    <Property Name="Contact_No" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="File_Harika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="filename" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="sourcepath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="size" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="H_Billdetails">
+    <Key>
+      <PropertyRef Name="Bill_No" />
+    </Key>
+    <Property Name="Bill_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="varchar(max)" Nullable="false" />
+    <Property Name="Admission_date" Type="varchar(max)" Nullable="false" />
+    <Property Name="Discharge_date" Type="varchar(max)" Nullable="false" />
+    <Property Name="Room_charges" Type="int" Nullable="false" />
+    <Property Name="pathology_fee" Type="int" Nullable="false" />
+    <Property Name="doctor_fee" Type="int" Nullable="false" />
+    <Property Name="miscellaneous" Type="int" Nullable="false" />
+    <Property Name="Total" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="H_Doctor">
+    <Key>
+      <PropertyRef Name="Doctor_Id" />
+    </Key>
+    <Property Name="Doctor_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" Nullable="false" />
+    <Property Name="Phone_Number" Type="varchar(max)" Nullable="false" />
+    <Property Name="Qualification" Type="varchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="varchar(max)" Nullable="false" />
+    <Property Name="Department" Type="varchar(max)" Nullable="false" />
+    <Property Name="No_of_patient_assigned" Type="int" Nullable="false" />
+    <Property Name="Max_Consultation" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="H_Patient">
+    <Key>
+      <PropertyRef Name="Patient_No" />
+    </Key>
+    <Property Name="Patient_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="varchar(max)" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Contact_no" Type="varchar(max)" Nullable="false" />
+    <Property Name="Room_no" Type="varchar(max)" />
+    <Property Name="Department" Type="varchar(max)" />
+    <Property Name="Doctor_Id" Type="int" />
+    <Property Name="Doctor_Name" Type="varchar(max)" />
+    <Property Name="Patient_Type" Type="varchar(max)" />
+    <Property Name="Symptoms" Type="varchar(max)" />
+    <Property Name="Medicines" Type="varchar(max)" />
+    <Property Name="Tests" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Harshita_Movie_booking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Movie_Name" Type="varchar(max)" />
+    <Property Name="Theatre_Id" Type="int" />
+    <Property Name="Show_Timing" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Harshita_Movies">
+    <Key>
+      <PropertyRef Name="Movie Id" />
+    </Key>
+    <Property Name="Movie Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Movie_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Poster" Type="varchar(max)" Nullable="false" />
+    <Property Name="Release_Year" Type="int" Nullable="false" />
+    <Property Name="BoxOffice_Collection" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Harshita_Patient_details">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="City" Type="varchar(max)" />
+    <Property Name="Gender" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Diagnosis" Type="varchar(max)" Nullable="false" />
+    <Property Name="Room_No" Type="int" />
+    <Property Name="Doctor_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Harshita_Theatres">
+    <Key>
+      <PropertyRef Name="Theatre_Id" />
+    </Key>
+    <Property Name="Theatre_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Theatre_Name" Type="varchar(max)" />
+    <Property Name="Theatre_city" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="movie_nithin">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Moviename" Type="varchar(max)" Nullable="false" />
+    <Property Name="Poster" Type="nvarchar(max)" />
+    <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
+    <Property Name="BoxOfficeCollection" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.Movies_Harika' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Movies_Harika">
+    <Key>
+      <PropertyRef Name="MovieId" />
+      <PropertyRef Name="MovieName" />
+      <PropertyRef Name="ReleaseDate" />
+      <PropertyRef Name="Poster" />
+      <PropertyRef Name="BoxOffice" />
+    </Key>
+    <Property Name="MovieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovieName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReleaseDate" Type="date" Nullable="false" />
+    <Property Name="Poster" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BoxOffice" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" />
+  </EntityType>
+  <EntityType Name="MovieShow_harika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="MovieName" Type="nchar" MaxLength="10" />
+    <Property Name="MorningShow" Type="nchar" MaxLength="10" />
+    <Property Name="NoonShow" Type="nchar" MaxLength="10" />
+    <Property Name="FirstShow" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MovieTheatre_Harika">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="int" Nullable="false" />
+    <Property Name="MovieName" Type="nchar" MaxLength="10" />
+    <Property Name="TheatreName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.MSreplication_options' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSreplication_options">
+    <Key>
+      <PropertyRef Name="optname" />
+      <PropertyRef Name="value" />
+      <PropertyRef Name="major_version" />
+      <PropertyRef Name="minor_version" />
+      <PropertyRef Name="revision" />
+      <PropertyRef Name="install_failures" />
+    </Key>
+    <Property Name="optname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="value" Type="bit" Nullable="false" />
+    <Property Name="major_version" Type="int" Nullable="false" />
+    <Property Name="minor_version" Type="int" Nullable="false" />
+    <Property Name="revision" Type="int" Nullable="false" />
+    <Property Name="install_failures" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="nithin movies">
+    <Key>
+      <PropertyRef Name="MId" />
+    </Key>
+    <Property Name="MId" Type="int" Nullable="false" />
+    <Property Name="Mname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mrelease" Type="date" Nullable="false" />
+    <Property Name="Mcoll" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Address" Type="int" Nullable="false" />
+    <Property Name="Contact_Number" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Occupation" Type="varchar(max)" Nullable="false" />
+    <Property Name="Problem_Type" Type="varchar(max)" Nullable="false" />
+    <Property Name="Last_Vist" Type="date" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.Patient_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Patient_details">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+      <PropertyRef Name="Patient_Name" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Diagnosis" />
+    </Key>
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="City" Type="varchar(max)" />
+    <Property Name="Gender" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Diagnosis" Type="varchar(max)" Nullable="false" />
+    <Property Name="Room_No" Type="int" />
+  </EntityType>
+  <EntityType Name="Patient_H">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Address" Type="int" Nullable="false" />
+    <Property Name="Contact_Number" Type="int" Nullable="false" />
+    <Property Name="Occupation" Type="varchar(max)" Nullable="false" />
+    <Property Name="Problem_Type" Type="varchar(max)" Nullable="false" />
+    <Property Name="Doctor_id" Type="int" />
+    <Property Name="Insurance" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlaceTheatre_Harika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TheatreName" Type="nchar" MaxLength="10" />
+    <Property Name="Place" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="prabhucityTable">
+    <Key>
+      <PropertyRef Name="city_Id" />
+    </Key>
+    <Property Name="city_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prabhufolderlistTable">
+    <Key>
+      <PropertyRef Name="folder_Id" />
+    </Key>
+    <Property Name="folder_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="item_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="item_size" Type="int" Nullable="false" />
+    <Property Name="item_directory_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="item_full_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="item_extension" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prabhumovieTable">
+    <Key>
+      <PropertyRef Name="Movie_id" />
+    </Key>
+    <Property Name="Movie_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="movie_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Movie_release_date" Type="datetimeoffset" Precision="7" Nullable="false" />
+    <Property Name="movie_poster" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="movie_collections" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prabhutheatreTable">
+    <Key>
+      <PropertyRef Name="theatre_id" />
+    </Key>
+    <Property Name="theatre_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="theatre_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="city_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prabhuTimeTable">
+    <Key>
+      <PropertyRef Name="Time_id" />
+    </Key>
+    <Property Name="Time_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="show_timings" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="theatre_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Room_Details">
+    <Key>
+      <PropertyRef Name="Room_No" />
+    </Key>
+    <Property Name="Room_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Room_Type" Type="varchar(max)" Nullable="false" />
+    <Property Name="Vacancy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rp_Doctor">
+    <Key>
+      <PropertyRef Name="D_Id" />
+    </Key>
+    <Property Name="D_Id" Type="int" Nullable="false" />
+    <Property Name="Doctor_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="specialization" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.rp_Patient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="rp_Patient">
+    <Key>
+      <PropertyRef Name="P_Id" />
+      <PropertyRef Name="Patient_Name" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="Symptom" />
+    </Key>
+    <Property Name="P_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Room_No" Type="int" />
+    <Property Name="Symptom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="D_Id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_db' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="spt_fallback_db">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="xserver_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+    <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+    <Property Name="xfallback_dbid" Type="smallint" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="dbid" Type="smallint" Nullable="false" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="version" Type="smallint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_dev' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="spt_fallback_dev">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="low" />
+      <PropertyRef Name="high" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="phyname" />
+    </Key>
+    <Property Name="xserver_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+    <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+    <Property Name="xfallback_low" Type="int" />
+    <Property Name="xfallback_drive" Type="char" MaxLength="2" />
+    <Property Name="low" Type="int" Nullable="false" />
+    <Property Name="high" Type="int" Nullable="false" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="phyname" Type="varchar" MaxLength="127" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_usg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="spt_fallback_usg">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="segmap" />
+      <PropertyRef Name="lstart" />
+      <PropertyRef Name="sizepg" />
+      <PropertyRef Name="vstart" />
+    </Key>
+    <Property Name="xserver_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+    <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+    <Property Name="xfallback_vstart" Type="int" />
+    <Property Name="dbid" Type="smallint" Nullable="false" />
+    <Property Name="segmap" Type="int" Nullable="false" />
+    <Property Name="lstart" Type="int" Nullable="false" />
+    <Property Name="sizepg" Type="int" Nullable="false" />
+    <Property Name="vstart" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_monitor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="spt_monitor">
+    <Key>
+      <PropertyRef Name="lastrun" />
+      <PropertyRef Name="cpu_busy" />
+      <PropertyRef Name="io_busy" />
+      <PropertyRef Name="idle" />
+      <PropertyRef Name="pack_received" />
+      <PropertyRef Name="pack_sent" />
+      <PropertyRef Name="connections" />
+      <PropertyRef Name="pack_errors" />
+      <PropertyRef Name="total_read" />
+      <PropertyRef Name="total_write" />
+      <PropertyRef Name="total_errors" />
+    </Key>
+    <Property Name="lastrun" Type="datetime" Nullable="false" />
+    <Property Name="cpu_busy" Type="int" Nullable="false" />
+    <Property Name="io_busy" Type="int" Nullable="false" />
+    <Property Name="idle" Type="int" Nullable="false" />
+    <Property Name="pack_received" Type="int" Nullable="false" />
+    <Property Name="pack_sent" Type="int" Nullable="false" />
+    <Property Name="connections" Type="int" Nullable="false" />
+    <Property Name="pack_errors" Type="int" Nullable="false" />
+    <Property Name="total_read" Type="int" Nullable="false" />
+    <Property Name="total_write" Type="int" Nullable="false" />
+    <Property Name="total_errors" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="spt_values">
+    <Key>
+      <PropertyRef Name="number" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="35" />
+    <Property Name="number" Type="int" Nullable="false" />
+    <Property Name="type" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="low" Type="int" />
+    <Property Name="high" Type="int" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+    <Property Name="Patient_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Gender" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Diagnosis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Room_No" Type="int" />
+    <Property Name="Doctor_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableDoctors_Harika">
+    <Key>
+      <PropertyRef Name="did" />
+    </Key>
+    <Property Name="did" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dname" Type="varchar(max)" Nullable="false" />
+    <Property Name="qualification" Type="nvarchar(max)" />
+    <Property Name="specialization" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TablePatients_Harika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="city" Type="varchar(max)" />
+    <Property Name="gender" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="diagnosis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="did" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Theatre_svn">
+    <Key>
+      <PropertyRef Name="Theatre_Id" />
+    </Key>
+    <Property Name="City_Id" Type="int" Nullable="false" />
+    <Property Name="Theatre_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Theatre_Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Timing_svn">
+    <Key>
+      <PropertyRef Name="Timings_Id" />
+    </Key>
+    <Property Name="Theatre_Id" Type="int" Nullable="false" />
+    <Property Name="Timings" Type="varchar(max)" />
+    <Property Name="Timings_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__TablePatien__did__66B53B20">
+    <End Role="TableDoctors_Harika" Type="Self.TableDoctors_Harika" Multiplicity="1" />
+    <End Role="TablePatients_Harika" Type="Self.TablePatients_Harika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableDoctors_Harika">
+        <PropertyRef Name="did" />
+      </Principal>
+      <Dependent Role="TablePatients_Harika">
+        <PropertyRef Name="did" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_details_ToTable">
+    <End Role="BANK_DETAILS" Type="Self.BANK_DETAILS" Multiplicity="1" />
+    <End Role="Account_details" Type="Self.Account_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANK_DETAILS">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Account_details">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Credit_details_ToTable">
+    <End Role="BANK_DETAILS" Type="Self.BANK_DETAILS" Multiplicity="1" />
+    <End Role="Credit_details" Type="Self.Credit_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANK_DETAILS">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Credit_details">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Harshita_Movie_booking_ToTable">
+    <End Role="Harshita_Theatres" Type="Self.Harshita_Theatres" Multiplicity="0..1" />
+    <End Role="Harshita_Movie_booking" Type="Self.Harshita_Movie_booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Harshita_Theatres">
+        <PropertyRef Name="Theatre_Id" />
+      </Principal>
+      <Dependent Role="Harshita_Movie_booking">
+        <PropertyRef Name="Theatre_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prabhutheatreTable_ToTable">
+    <End Role="prabhucityTable" Type="Self.prabhucityTable" Multiplicity="1" />
+    <End Role="prabhutheatreTable" Type="Self.prabhutheatreTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prabhucityTable">
+        <PropertyRef Name="city_Id" />
+      </Principal>
+      <Dependent Role="prabhutheatreTable">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prabhuTimeTable_ToTable">
+    <End Role="prabhutheatreTable" Type="Self.prabhutheatreTable" Multiplicity="1" />
+    <End Role="prabhuTimeTable" Type="Self.prabhuTimeTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prabhutheatreTable">
+        <PropertyRef Name="theatre_id" />
+      </Principal>
+      <Dependent Role="prabhuTimeTable">
+        <PropertyRef Name="theatre_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Temp">
+    <End Role="rp_Doctor" Type="Self.rp_Doctor" Multiplicity="0..1" />
+    <End Role="rp_Patient" Type="Self.rp_Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rp_Doctor">
+        <PropertyRef Name="D_Id" />
+      </Principal>
+      <Dependent Role="rp_Patient">
+        <PropertyRef Name="D_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Theatre_svn_ToTable">
+    <End Role="City_srk_vam" Type="Self.City_srk_vam" Multiplicity="1" />
+    <End Role="Theatre_svn" Type="Self.Theatre_svn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_srk_vam">
+        <PropertyRef Name="CITY_ID" />
+      </Principal>
+      <Dependent Role="Theatre_svn">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Timing_svm_ToTable">
+    <End Role="Theatre_svn" Type="Self.Theatre_svn" Multiplicity="1" />
+    <End Role="Timing_svn" Type="Self.Timing_svn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Theatre_svn">
+        <PropertyRef Name="Theatre_Id" />
+      </Principal>
+      <Dependent Role="Timing_svn">
+        <PropertyRef Name="Theatre_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_MScleanupmergepublisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_MSrepl_startup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="masterModelStoreContainer">
+    <EntitySet Name="Account_details" EntityType="Self.Account_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BANK_DETAILS" EntityType="Self.BANK_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City_srk_vam" EntityType="Self.City_srk_vam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Credit_details" EntityType="Self.Credit_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor_details" EntityType="Self.Doctor_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor_srk" EntityType="Self.Doctor_srk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctors_H" EntityType="Self.Doctors_H" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="File_Harika" EntityType="Self.File_Harika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="H_Billdetails" EntityType="Self.H_Billdetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="H_Doctor" EntityType="Self.H_Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="H_Patient" EntityType="Self.H_Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Harshita_Movie_booking" EntityType="Self.Harshita_Movie_booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Harshita_Movies" EntityType="Self.Harshita_Movies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Harshita_Patient_details" EntityType="Self.Harshita_Patient_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Harshita_Theatres" EntityType="Self.Harshita_Theatres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="movie_nithin" EntityType="Self.movie_nithin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovieShow_harika" EntityType="Self.MovieShow_harika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovieTheatre_Harika" EntityType="Self.MovieTheatre_Harika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="nithin movies" EntityType="Self.nithin movies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_H" EntityType="Self.Patient_H" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceTheatre_Harika" EntityType="Self.PlaceTheatre_Harika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prabhucityTable" EntityType="Self.prabhucityTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prabhufolderlistTable" EntityType="Self.prabhufolderlistTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prabhumovieTable" EntityType="Self.prabhumovieTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prabhutheatreTable" EntityType="Self.prabhutheatreTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prabhuTimeTable" EntityType="Self.prabhuTimeTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room_Details" EntityType="Self.Room_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rp_Doctor" EntityType="Self.rp_Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableDoctors_Harika" EntityType="Self.TableDoctors_Harika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TablePatients_Harika" EntityType="Self.TablePatients_Harika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Theatre_svn" EntityType="Self.Theatre_svn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Timing_svn" EntityType="Self.Timing_svn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movies_Harika" EntityType="Self.Movies_Harika" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Movies_Harika].[MovieId] AS [MovieId], 
+    [Movies_Harika].[MovieName] AS [MovieName], 
+    [Movies_Harika].[ReleaseDate] AS [ReleaseDate], 
+    [Movies_Harika].[Poster] AS [Poster], 
+    [Movies_Harika].[BoxOffice] AS [BoxOffice], 
+    [Movies_Harika].[Year] AS [Year]
+    FROM [dbo].[Movies_Harika] AS [Movies_Harika]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSreplication_options" EntityType="Self.MSreplication_options" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MSreplication_options].[optname] AS [optname], 
+    [MSreplication_options].[value] AS [value], 
+    [MSreplication_options].[major_version] AS [major_version], 
+    [MSreplication_options].[minor_version] AS [minor_version], 
+    [MSreplication_options].[revision] AS [revision], 
+    [MSreplication_options].[install_failures] AS [install_failures]
+    FROM [dbo].[MSreplication_options] AS [MSreplication_options]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Patient_details" EntityType="Self.Patient_details" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Patient_details].[Patient_Id] AS [Patient_Id], 
+    [Patient_details].[Patient_Name] AS [Patient_Name], 
+    [Patient_details].[City] AS [City], 
+    [Patient_details].[Gender] AS [Gender], 
+    [Patient_details].[Diagnosis] AS [Diagnosis], 
+    [Patient_details].[Room_No] AS [Room_No]
+    FROM [dbo].[Patient_details] AS [Patient_details]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="rp_Patient" EntityType="Self.rp_Patient" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [rp_Patient].[P_Id] AS [P_Id], 
+    [rp_Patient].[Patient_Name] AS [Patient_Name], 
+    [rp_Patient].[Gender] AS [Gender], 
+    [rp_Patient].[City] AS [City], 
+    [rp_Patient].[Room_No] AS [Room_No], 
+    [rp_Patient].[Symptom] AS [Symptom], 
+    [rp_Patient].[D_Id] AS [D_Id]
+    FROM [dbo].[rp_Patient] AS [rp_Patient]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="spt_fallback_db" EntityType="Self.spt_fallback_db" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [spt_fallback_db].[xserver_name] AS [xserver_name], 
+    [spt_fallback_db].[xdttm_ins] AS [xdttm_ins], 
+    [spt_fallback_db].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+    [spt_fallback_db].[xfallback_dbid] AS [xfallback_dbid], 
+    [spt_fallback_db].[name] AS [name], 
+    [spt_fallback_db].[dbid] AS [dbid], 
+    [spt_fallback_db].[status] AS [status], 
+    [spt_fallback_db].[version] AS [version]
+    FROM [dbo].[spt_fallback_db] AS [spt_fallback_db]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="spt_fallback_dev" EntityType="Self.spt_fallback_dev" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [spt_fallback_dev].[xserver_name] AS [xserver_name], 
+    [spt_fallback_dev].[xdttm_ins] AS [xdttm_ins], 
+    [spt_fallback_dev].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+    [spt_fallback_dev].[xfallback_low] AS [xfallback_low], 
+    [spt_fallback_dev].[xfallback_drive] AS [xfallback_drive], 
+    [spt_fallback_dev].[low] AS [low], 
+    [spt_fallback_dev].[high] AS [high], 
+    [spt_fallback_dev].[status] AS [status], 
+    [spt_fallback_dev].[name] AS [name], 
+    [spt_fallback_dev].[phyname] AS [phyname]
+    FROM [dbo].[spt_fallback_dev] AS [spt_fallback_dev]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="spt_fallback_usg" EntityType="Self.spt_fallback_usg" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [spt_fallback_usg].[xserver_name] AS [xserver_name], 
+    [spt_fallback_usg].[xdttm_ins] AS [xdttm_ins], 
+    [spt_fallback_usg].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+    [spt_fallback_usg].[xfallback_vstart] AS [xfallback_vstart], 
+    [spt_fallback_usg].[dbid] AS [dbid], 
+    [spt_fallback_usg].[segmap] AS [segmap], 
+    [spt_fallback_usg].[lstart] AS [lstart], 
+    [spt_fallback_usg].[sizepg] AS [sizepg], 
+    [spt_fallback_usg].[vstart] AS [vstart]
+    FROM [dbo].[spt_fallback_usg] AS [spt_fallback_usg]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="spt_monitor" EntityType="Self.spt_monitor" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [spt_monitor].[lastrun] AS [lastrun], 
+    [spt_monitor].[cpu_busy] AS [cpu_busy], 
+    [spt_monitor].[io_busy] AS [io_busy], 
+    [spt_monitor].[idle] AS [idle], 
+    [spt_monitor].[pack_received] AS [pack_received], 
+    [spt_monitor].[pack_sent] AS [pack_sent], 
+    [spt_monitor].[connections] AS [connections], 
+    [spt_monitor].[pack_errors] AS [pack_errors], 
+    [spt_monitor].[total_read] AS [total_read], 
+    [spt_monitor].[total_write] AS [total_write], 
+    [spt_monitor].[total_errors] AS [total_errors]
+    FROM [dbo].[spt_monitor] AS [spt_monitor]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="spt_values" EntityType="Self.spt_values" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [spt_values].[name] AS [name], 
+    [spt_values].[number] AS [number], 
+    [spt_values].[type] AS [type], 
+    [spt_values].[low] AS [low], 
+    [spt_values].[high] AS [high], 
+    [spt_values].[status] AS [status]
+    FROM [dbo].[spt_values] AS [spt_values]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__TablePatien__did__66B53B20" Association="Self.FK__TablePatien__did__66B53B20">
+      <End Role="TableDoctors_Harika" EntitySet="TableDoctors_Harika" />
+      <End Role="TablePatients_Harika" EntitySet="TablePatients_Harika" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_details_ToTable" Association="Self.FK_Account_details_ToTable">
+      <End Role="BANK_DETAILS" EntitySet="BANK_DETAILS" />
+      <End Role="Account_details" EntitySet="Account_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Credit_details_ToTable" Association="Self.FK_Credit_details_ToTable">
+      <End Role="BANK_DETAILS" EntitySet="BANK_DETAILS" />
+      <End Role="Credit_details" EntitySet="Credit_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Harshita_Movie_booking_ToTable" Association="Self.FK_Harshita_Movie_booking_ToTable">
+      <End Role="Harshita_Theatres" EntitySet="Harshita_Theatres" />
+      <End Role="Harshita_Movie_booking" EntitySet="Harshita_Movie_booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prabhutheatreTable_ToTable" Association="Self.FK_prabhutheatreTable_ToTable">
+      <End Role="prabhucityTable" EntitySet="prabhucityTable" />
+      <End Role="prabhutheatreTable" EntitySet="prabhutheatreTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prabhuTimeTable_ToTable" Association="Self.FK_prabhuTimeTable_ToTable">
+      <End Role="prabhutheatreTable" EntitySet="prabhutheatreTable" />
+      <End Role="prabhuTimeTable" EntitySet="prabhuTimeTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Temp" Association="Self.FK_Temp">
+      <End Role="rp_Doctor" EntitySet="rp_Doctor" />
+      <End Role="rp_Patient" EntitySet="rp_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Theatre_svn_ToTable" Association="Self.FK_Theatre_svn_ToTable">
+      <End Role="City_srk_vam" EntitySet="City_srk_vam" />
+      <End Role="Theatre_svn" EntitySet="Theatre_svn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Timing_svm_ToTable" Association="Self.FK_Timing_svm_ToTable">
+      <End Role="Theatre_svn" EntitySet="Theatre_svn" />
+      <End Role="Timing_svn" EntitySet="Timing_svn" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

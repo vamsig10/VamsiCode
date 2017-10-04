@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account_details">
+    <Key>
+      <PropertyRef Name="Account_Id" />
+    </Key>
+    <Property Name="Account_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Deposits" Type="Int32" Nullable="false" />
+    <Property Name="Account_No" Type="Int32" Nullable="false" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BANK_DETAILS" Relationship="Self.FK_Account_details_ToTable" FromRole="Account_details" ToRole="BANK_DETAILS" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BANK_DETAILS">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Account_details" Relationship="Self.FK_Account_details_ToTable" FromRole="BANK_DETAILS" ToRole="Account_details" />
+    <NavigationProperty Name="Credit_details" Relationship="Self.FK_Credit_details_ToTable" FromRole="BANK_DETAILS" ToRole="Credit_details" />
+  </EntityType>
+  <EntityType Name="City_srk_vam">
+    <Key>
+      <PropertyRef Name="CITY_ID" />
+    </Key>
+    <Property Name="CITY_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CITY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Theatre_svn" Relationship="Self.FK_Theatre_svn_ToTable" FromRole="City_srk_vam" ToRole="Theatre_svn" />
+  </EntityType>
+  <EntityType Name="Credit_details">
+    <Key>
+      <PropertyRef Name="Credit_Id" />
+    </Key>
+    <Property Name="Credit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreditCard_No" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BANK_DETAILS" Relationship="Self.FK_Credit_details_ToTable" FromRole="Credit_details" ToRole="BANK_DETAILS" />
+  </EntityType>
+  <EntityType Name="Doctor_details">
+    <Key>
+      <PropertyRef Name="Doctor_Id" />
+    </Key>
+    <Property Name="Doctor_Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Specialization" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Doctor_srk">
+    <Key>
+      <PropertyRef Name="Did" />
+    </Key>
+    <Property Name="DName" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="speciality" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Did" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Doctors_H">
+    <Key>
+      <PropertyRef Name="Doctor_Id" />
+    </Key>
+    <Property Name="Doctor_Id" Type="Int32" Nullable="false" />
+    <Property Name="Doctor_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Degree" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dealing_with" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="max_consultation" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="Int32" Nullable="false" />
+    <Property Name="Contact_No" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="File_Harika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="filename" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="sourcepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="size" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="H_Billdetails">
+    <Key>
+      <PropertyRef Name="Bill_No" />
+    </Key>
+    <Property Name="Bill_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Admission_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Discharge_date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Room_charges" Type="Int32" Nullable="false" />
+    <Property Name="pathology_fee" Type="Int32" Nullable="false" />
+    <Property Name="doctor_fee" Type="Int32" Nullable="false" />
+    <Property Name="miscellaneous" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="H_Doctor">
+    <Key>
+      <PropertyRef Name="Doctor_Id" />
+    </Key>
+    <Property Name="Doctor_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="No_of_patient_assigned" Type="Int32" Nullable="false" />
+    <Property Name="Max_Consultation" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="H_Patient">
+    <Key>
+      <PropertyRef Name="Patient_No" />
+    </Key>
+    <Property Name="Patient_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Contact_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Room_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Doctor_Id" Type="Int32" />
+    <Property Name="Doctor_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Patient_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Symptoms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Medicines" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Tests" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Harshita_Movie_booking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Movie_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Theatre_Id" Type="Int32" />
+    <Property Name="Show_Timing" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Harshita_Theatres" Relationship="Self.FK_Harshita_Movie_booking_ToTable" FromRole="Harshita_Movie_booking" ToRole="Harshita_Theatres" />
+  </EntityType>
+  <EntityType Name="Harshita_Movies">
+    <Key>
+      <PropertyRef Name="Movie_Id" />
+    </Key>
+    <Property Name="Movie_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Movie_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Release_Year" Type="Int32" Nullable="false" />
+    <Property Name="BoxOffice_Collection" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Harshita_Patient_details">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Patient_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Diagnosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Room_No" Type="Int32" />
+    <Property Name="Doctor_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Harshita_Theatres">
+    <Key>
+      <PropertyRef Name="Theatre_Id" />
+    </Key>
+    <Property Name="Theatre_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Theatre_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Theatre_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Harshita_Movie_booking" Relationship="Self.FK_Harshita_Movie_booking_ToTable" FromRole="Harshita_Theatres" ToRole="Harshita_Movie_booking" />
+  </EntityType>
+  <EntityType Name="movie_nithin">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Moviename" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BoxOfficeCollection" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MovieShow_harika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="MovieName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MorningShow" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NoonShow" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FirstShow" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MovieTheatre_Harika">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="Int32" Nullable="false" />
+    <Property Name="MovieName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TheatreName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="nithin_movy">
+    <Key>
+      <PropertyRef Name="MId" />
+    </Key>
+    <Property Name="MId" Type="Int32" Nullable="false" />
+    <Property Name="Mname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Mrelease" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Mcoll" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="Int32" Nullable="false" />
+    <Property Name="Contact_Number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Problem_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Last_Vist" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Patient_H">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Patient_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="Int32" Nullable="false" />
+    <Property Name="Contact_Number" Type="Int32" Nullable="false" />
+    <Property Name="Occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Problem_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Doctor_id" Type="Int32" />
+    <Property Name="Insurance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlaceTheatre_Harika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TheatreName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Place" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="prabhucityTable">
+    <Key>
+      <PropertyRef Name="city_Id" />
+    </Key>
+    <Property Name="city_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="prabhutheatreTables" Relationship="Self.FK_prabhutheatreTable_ToTable" FromRole="prabhucityTable" ToRole="prabhutheatreTable" />
+  </EntityType>
+  <EntityType Name="prabhufolderlistTable">
+    <Key>
+      <PropertyRef Name="folder_Id" />
+    </Key>
+    <Property Name="folder_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="item_size" Type="Int32" Nullable="false" />
+    <Property Name="item_directory_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="item_full_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="item_extension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prabhumovieTable">
+    <Key>
+      <PropertyRef Name="Movie_id" />
+    </Key>
+    <Property Name="Movie_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="movie_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Movie_release_date" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="movie_poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="movie_collections" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="prabhutheatreTable">
+    <Key>
+      <PropertyRef Name="theatre_id" />
+    </Key>
+    <Property Name="theatre_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="theatre_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="prabhucityTable" Relationship="Self.FK_prabhutheatreTable_ToTable" FromRole="prabhutheatreTable" ToRole="prabhucityTable" />
+    <NavigationProperty Name="prabhuTimeTables" Relationship="Self.FK_prabhuTimeTable_ToTable" FromRole="prabhutheatreTable" ToRole="prabhuTimeTable" />
+  </EntityType>
+  <EntityType Name="prabhuTimeTable">
+    <Key>
+      <PropertyRef Name="Time_id" />
+    </Key>
+    <Property Name="Time_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="show_timings" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="theatre_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="prabhutheatreTable" Relationship="Self.FK_prabhuTimeTable_ToTable" FromRole="prabhuTimeTable" ToRole="prabhutheatreTable" />
+  </EntityType>
+  <EntityType Name="Room_Details">
+    <Key>
+      <PropertyRef Name="Room_No" />
+    </Key>
+    <Property Name="Room_No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Room_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Vacancy" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rp_Doctor">
+    <Key>
+      <PropertyRef Name="D_Id" />
+    </Key>
+    <Property Name="D_Id" Type="Int32" Nullable="false" />
+    <Property Name="Doctor_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="specialization" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="rp_Patient" Relationship="Self.FK_Temp" FromRole="rp_Doctor" ToRole="rp_Patient" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+    </Key>
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Patient_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Diagnosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Room_No" Type="Int32" />
+    <Property Name="Doctor_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableDoctors_Harika">
+    <Key>
+      <PropertyRef Name="did" />
+    </Key>
+    <Property Name="did" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="specialization" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="TablePatients_Harika" Relationship="Self.FK__TablePatien__did__66B53B20" FromRole="TableDoctors_Harika" ToRole="TablePatients_Harika" />
+  </EntityType>
+  <EntityType Name="TablePatients_Harika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="diagnosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="did" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TableDoctors_Harika" Relationship="Self.FK__TablePatien__did__66B53B20" FromRole="TablePatients_Harika" ToRole="TableDoctors_Harika" />
+  </EntityType>
+  <EntityType Name="Theatre_svn">
+    <Key>
+      <PropertyRef Name="Theatre_Id" />
+    </Key>
+    <Property Name="City_Id" Type="Int32" Nullable="false" />
+    <Property Name="Theatre_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Theatre_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="City_srk_vam" Relationship="Self.FK_Theatre_svn_ToTable" FromRole="Theatre_svn" ToRole="City_srk_vam" />
+    <NavigationProperty Name="Timing_svn" Relationship="Self.FK_Timing_svm_ToTable" FromRole="Theatre_svn" ToRole="Timing_svn" />
+  </EntityType>
+  <EntityType Name="Timing_svn">
+    <Key>
+      <PropertyRef Name="Timings_Id" />
+    </Key>
+    <Property Name="Theatre_Id" Type="Int32" Nullable="false" />
+    <Property Name="Timings" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Timings_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Theatre_svn" Relationship="Self.FK_Timing_svm_ToTable" FromRole="Timing_svn" ToRole="Theatre_svn" />
+  </EntityType>
+  <EntityType Name="Movies_Harika">
+    <Key>
+      <PropertyRef Name="MovieId" />
+      <PropertyRef Name="MovieName" />
+      <PropertyRef Name="ReleaseDate" />
+      <PropertyRef Name="Poster" />
+      <PropertyRef Name="BoxOffice" />
+    </Key>
+    <Property Name="MovieId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BoxOffice" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MSreplication_options">
+    <Key>
+      <PropertyRef Name="optname" />
+      <PropertyRef Name="value" />
+      <PropertyRef Name="major_version" />
+      <PropertyRef Name="minor_version" />
+      <PropertyRef Name="revision" />
+      <PropertyRef Name="install_failures" />
+    </Key>
+    <Property Name="optname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="value" Type="Boolean" Nullable="false" />
+    <Property Name="major_version" Type="Int32" Nullable="false" />
+    <Property Name="minor_version" Type="Int32" Nullable="false" />
+    <Property Name="revision" Type="Int32" Nullable="false" />
+    <Property Name="install_failures" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient_details">
+    <Key>
+      <PropertyRef Name="Patient_Id" />
+      <PropertyRef Name="Patient_Name" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Diagnosis" />
+    </Key>
+    <Property Name="Patient_Id" Type="Int32" Nullable="false" />
+    <Property Name="Patient_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Diagnosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Room_No" Type="Int32" />
+  </EntityType>
+  <EntityType Name="rp_Patient">
+    <Key>
+      <PropertyRef Name="P_Id" />
+      <PropertyRef Name="Patient_Name" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="Symptom" />
+    </Key>
+    <Property Name="P_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Patient_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Room_No" Type="Int32" />
+    <Property Name="Symptom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="D_Id" Type="Int32" />
+    <NavigationProperty Name="rp_Doctor" Relationship="Self.FK_Temp" FromRole="rp_Patient" ToRole="rp_Doctor" />
+  </EntityType>
+  <EntityType Name="spt_fallback_db">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xfallback_dbid" Type="Int16" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dbid" Type="Int16" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="version" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_fallback_dev">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="low" />
+      <PropertyRef Name="high" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="phyname" />
+    </Key>
+    <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xfallback_low" Type="Int32" />
+    <Property Name="xfallback_drive" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="low" Type="Int32" Nullable="false" />
+    <Property Name="high" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phyname" Type="String" MaxLength="127" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_fallback_usg">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="segmap" />
+      <PropertyRef Name="lstart" />
+      <PropertyRef Name="sizepg" />
+      <PropertyRef Name="vstart" />
+    </Key>
+    <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xfallback_vstart" Type="Int32" />
+    <Property Name="dbid" Type="Int16" Nullable="false" />
+    <Property Name="segmap" Type="Int32" Nullable="false" />
+    <Property Name="lstart" Type="Int32" Nullable="false" />
+    <Property Name="sizepg" Type="Int32" Nullable="false" />
+    <Property Name="vstart" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_monitor">
+    <Key>
+      <PropertyRef Name="lastrun" />
+      <PropertyRef Name="cpu_busy" />
+      <PropertyRef Name="io_busy" />
+      <PropertyRef Name="idle" />
+      <PropertyRef Name="pack_received" />
+      <PropertyRef Name="pack_sent" />
+      <PropertyRef Name="connections" />
+      <PropertyRef Name="pack_errors" />
+      <PropertyRef Name="total_read" />
+      <PropertyRef Name="total_write" />
+      <PropertyRef Name="total_errors" />
+    </Key>
+    <Property Name="lastrun" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cpu_busy" Type="Int32" Nullable="false" />
+    <Property Name="io_busy" Type="Int32" Nullable="false" />
+    <Property Name="idle" Type="Int32" Nullable="false" />
+    <Property Name="pack_received" Type="Int32" Nullable="false" />
+    <Property Name="pack_sent" Type="Int32" Nullable="false" />
+    <Property Name="connections" Type="Int32" Nullable="false" />
+    <Property Name="pack_errors" Type="Int32" Nullable="false" />
+    <Property Name="total_read" Type="Int32" Nullable="false" />
+    <Property Name="total_write" Type="Int32" Nullable="false" />
+    <Property Name="total_errors" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_values">
+    <Key>
+      <PropertyRef Name="number" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="number" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="low" Type="Int32" />
+    <Property Name="high" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Account_details_ToTable">
+    <End Role="BANK_DETAILS" Type="Self.BANK_DETAILS" Multiplicity="1" />
+    <End Role="Account_details" Type="Self.Account_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANK_DETAILS">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Account_details">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Credit_details_ToTable">
+    <End Role="BANK_DETAILS" Type="Self.BANK_DETAILS" Multiplicity="1" />
+    <End Role="Credit_details" Type="Self.Credit_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANK_DETAILS">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Credit_details">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Theatre_svn_ToTable">
+    <End Role="City_srk_vam" Type="Self.City_srk_vam" Multiplicity="1" />
+    <End Role="Theatre_svn" Type="Self.Theatre_svn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_srk_vam">
+        <PropertyRef Name="CITY_ID" />
+      </Principal>
+      <Dependent Role="Theatre_svn">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Harshita_Movie_booking_ToTable">
+    <End Role="Harshita_Theatres" Type="Self.Harshita_Theatres" Multiplicity="0..1" />
+    <End Role="Harshita_Movie_booking" Type="Self.Harshita_Movie_booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Harshita_Theatres">
+        <PropertyRef Name="Theatre_Id" />
+      </Principal>
+      <Dependent Role="Harshita_Movie_booking">
+        <PropertyRef Name="Theatre_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prabhutheatreTable_ToTable">
+    <End Role="prabhucityTable" Type="Self.prabhucityTable" Multiplicity="1" />
+    <End Role="prabhutheatreTable" Type="Self.prabhutheatreTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prabhucityTable">
+        <PropertyRef Name="city_Id" />
+      </Principal>
+      <Dependent Role="prabhutheatreTable">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_prabhuTimeTable_ToTable">
+    <End Role="prabhutheatreTable" Type="Self.prabhutheatreTable" Multiplicity="1" />
+    <End Role="prabhuTimeTable" Type="Self.prabhuTimeTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prabhutheatreTable">
+        <PropertyRef Name="theatre_id" />
+      </Principal>
+      <Dependent Role="prabhuTimeTable">
+        <PropertyRef Name="theatre_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Temp">
+    <End Role="rp_Doctor" Type="Self.rp_Doctor" Multiplicity="0..1" />
+    <End Role="rp_Patient" Type="Self.rp_Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rp_Doctor">
+        <PropertyRef Name="D_Id" />
+      </Principal>
+      <Dependent Role="rp_Patient">
+        <PropertyRef Name="D_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TablePatien__did__66B53B20">
+    <End Role="TableDoctors_Harika" Type="Self.TableDoctors_Harika" Multiplicity="1" />
+    <End Role="TablePatients_Harika" Type="Self.TablePatients_Harika" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableDoctors_Harika">
+        <PropertyRef Name="did" />
+      </Principal>
+      <Dependent Role="TablePatients_Harika">
+        <PropertyRef Name="did" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Timing_svm_ToTable">
+    <End Role="Theatre_svn" Type="Self.Theatre_svn" Multiplicity="1" />
+    <End Role="Timing_svn" Type="Self.Timing_svn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Theatre_svn">
+        <PropertyRef Name="Theatre_Id" />
+      </Principal>
+      <Dependent Role="Timing_svn">
+        <PropertyRef Name="Theatre_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Account_details" EntityType="Self.Account_details" />
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="BANK_DETAILS" EntityType="Self.BANK_DETAILS" />
+    <EntitySet Name="City_srk_vam" EntityType="Self.City_srk_vam" />
+    <EntitySet Name="Credit_details" EntityType="Self.Credit_details" />
+    <EntitySet Name="Doctor_details" EntityType="Self.Doctor_details" />
+    <EntitySet Name="Doctor_srk" EntityType="Self.Doctor_srk" />
+    <EntitySet Name="Doctors_H" EntityType="Self.Doctors_H" />
+    <EntitySet Name="File_Harika" EntityType="Self.File_Harika" />
+    <EntitySet Name="H_Billdetails" EntityType="Self.H_Billdetails" />
+    <EntitySet Name="H_Doctor" EntityType="Self.H_Doctor" />
+    <EntitySet Name="H_Patient" EntityType="Self.H_Patient" />
+    <EntitySet Name="Harshita_Movie_booking" EntityType="Self.Harshita_Movie_booking" />
+    <EntitySet Name="Harshita_Movies" EntityType="Self.Harshita_Movies" />
+    <EntitySet Name="Harshita_Patient_details" EntityType="Self.Harshita_Patient_details" />
+    <EntitySet Name="Harshita_Theatres" EntityType="Self.Harshita_Theatres" />
+    <EntitySet Name="movie_nithin" EntityType="Self.movie_nithin" />
+    <EntitySet Name="MovieShow_harika" EntityType="Self.MovieShow_harika" />
+    <EntitySet Name="MovieTheatre_Harika" EntityType="Self.MovieTheatre_Harika" />
+    <EntitySet Name="nithin_movies" EntityType="Self.nithin_movy" />
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+    <EntitySet Name="Patient_H" EntityType="Self.Patient_H" />
+    <EntitySet Name="PlaceTheatre_Harika" EntityType="Self.PlaceTheatre_Harika" />
+    <EntitySet Name="prabhucityTables" EntityType="Self.prabhucityTable" />
+    <EntitySet Name="prabhufolderlistTables" EntityType="Self.prabhufolderlistTable" />
+    <EntitySet Name="prabhumovieTables" EntityType="Self.prabhumovieTable" />
+    <EntitySet Name="prabhutheatreTables" EntityType="Self.prabhutheatreTable" />
+    <EntitySet Name="prabhuTimeTables" EntityType="Self.prabhuTimeTable" />
+    <EntitySet Name="Room_Details" EntityType="Self.Room_Details" />
+    <EntitySet Name="rp_Doctor" EntityType="Self.rp_Doctor" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+    <EntitySet Name="TableDoctors_Harika" EntityType="Self.TableDoctors_Harika" />
+    <EntitySet Name="TablePatients_Harika" EntityType="Self.TablePatients_Harika" />
+    <EntitySet Name="Theatre_svn" EntityType="Self.Theatre_svn" />
+    <EntitySet Name="Timing_svn" EntityType="Self.Timing_svn" />
+    <EntitySet Name="Movies_Harika" EntityType="Self.Movies_Harika" />
+    <EntitySet Name="MSreplication_options" EntityType="Self.MSreplication_options" />
+    <EntitySet Name="Patient_details" EntityType="Self.Patient_details" />
+    <EntitySet Name="rp_Patient" EntityType="Self.rp_Patient" />
+    <EntitySet Name="spt_fallback_db" EntityType="Self.spt_fallback_db" />
+    <EntitySet Name="spt_fallback_dev" EntityType="Self.spt_fallback_dev" />
+    <EntitySet Name="spt_fallback_usg" EntityType="Self.spt_fallback_usg" />
+    <EntitySet Name="spt_monitor" EntityType="Self.spt_monitor" />
+    <EntitySet Name="spt_values" EntityType="Self.spt_values" />
+    <AssociationSet Name="FK_Account_details_ToTable" Association="Self.FK_Account_details_ToTable">
+      <End Role="BANK_DETAILS" EntitySet="BANK_DETAILS" />
+      <End Role="Account_details" EntitySet="Account_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Credit_details_ToTable" Association="Self.FK_Credit_details_ToTable">
+      <End Role="BANK_DETAILS" EntitySet="BANK_DETAILS" />
+      <End Role="Credit_details" EntitySet="Credit_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Theatre_svn_ToTable" Association="Self.FK_Theatre_svn_ToTable">
+      <End Role="City_srk_vam" EntitySet="City_srk_vam" />
+      <End Role="Theatre_svn" EntitySet="Theatre_svn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Harshita_Movie_booking_ToTable" Association="Self.FK_Harshita_Movie_booking_ToTable">
+      <End Role="Harshita_Theatres" EntitySet="Harshita_Theatres" />
+      <End Role="Harshita_Movie_booking" EntitySet="Harshita_Movie_booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prabhutheatreTable_ToTable" Association="Self.FK_prabhutheatreTable_ToTable">
+      <End Role="prabhucityTable" EntitySet="prabhucityTables" />
+      <End Role="prabhutheatreTable" EntitySet="prabhutheatreTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_prabhuTimeTable_ToTable" Association="Self.FK_prabhuTimeTable_ToTable">
+      <End Role="prabhutheatreTable" EntitySet="prabhutheatreTables" />
+      <End Role="prabhuTimeTable" EntitySet="prabhuTimeTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Temp" Association="Self.FK_Temp">
+      <End Role="rp_Doctor" EntitySet="rp_Doctor" />
+      <End Role="rp_Patient" EntitySet="rp_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TablePatien__did__66B53B20" Association="Self.FK__TablePatien__did__66B53B20">
+      <End Role="TableDoctors_Harika" EntitySet="TableDoctors_Harika" />
+      <End Role="TablePatients_Harika" EntitySet="TablePatients_Harika" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Timing_svm_ToTable" Association="Self.FK_Timing_svm_ToTable">
+      <End Role="Theatre_svn" EntitySet="Theatre_svn" />
+      <End Role="Timing_svn" EntitySet="Timing_svn" />
+    </AssociationSet>
+    <FunctionImport Name="sp_MScleanupmergepublisher" />
+    <FunctionImport Name="sp_MSrepl_startup" />
+  </EntityContainer>
+</Schema>

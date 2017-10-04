@@ -1,0 +1,6 @@
+c:\users\vamsi.gamidi\source\repos\EntityFrameworkDemo\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+c:\users\vamsi.gamidi\source\repos\EntityFrameworkDemo\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+c:\users\vamsi.gamidi\source\repos\EntityFrameworkDemo\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+c:\users\vamsi.gamidi\source\repos\EntityFrameworkDemo\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+c:\users\vamsi.gamidi\source\repos\EntityFrameworkDemo\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+c:\users\vamsi.gamidi\source\repos\EntityFrameworkDemo\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

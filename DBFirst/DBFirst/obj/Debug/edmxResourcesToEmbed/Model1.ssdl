@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Vamsi_Gamidi_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Franchise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Owner" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Franchise" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IPL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Franchise" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movie_Details">
+    <Key>
+      <PropertyRef Name="Movie_Id" />
+    </Key>
+    <Property Name="Movie_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Movie_Name" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Movie_Release_Date" Type="datetime" Nullable="false" />
+    <Property Name="Movie_Colections" Type="int" Nullable="false" />
+    <Property Name="Movie_Poster" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Movie_Id" />
+    </Key>
+    <Property Name="Movie_Id" Type="int" Nullable="false" />
+    <Property Name="Movie_Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Movie_Release_Date" Type="datetime" Nullable="false" />
+    <Property Name="Movie_Colections" Type="int" Nullable="false" />
+    <Property Name="Movie_Poster" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Vamsi_Gamidi_DB.dbo.Theatres' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Theatres">
+    <Key>
+      <PropertyRef Name="Theatre_Id" />
+      <PropertyRef Name="Theatre_Name" />
+      <PropertyRef Name="Theatre_Location" />
+      <PropertyRef Name="Theatre_Movie_MShow" />
+      <PropertyRef Name="Theatre_Movie_Matinee" />
+      <PropertyRef Name="Theatre_Movie_FShow" />
+      <PropertyRef Name="Theatre_Movie_SShow" />
+    </Key>
+    <Property Name="Theatre_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Theatre_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Theatre_Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Theatre_Movie_MShow" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Theatre_Movie_Matinee" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Theatre_Movie_FShow" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Theatre_Movie_SShow" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Vamsi_Gamidi_DBModelStoreContainer">
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Franchise" EntityType="Self.Franchise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IPL" EntityType="Self.IPL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movie_Details" EntityType="Self.Movie_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Theatres" EntityType="Self.Theatres" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Theatres].[Theatre_Id] AS [Theatre_Id], 
+    [Theatres].[Theatre_Name] AS [Theatre_Name], 
+    [Theatres].[Theatre_Location] AS [Theatre_Location], 
+    [Theatres].[Theatre_Movie_MShow] AS [Theatre_Movie_MShow], 
+    [Theatres].[Theatre_Movie_Matinee] AS [Theatre_Movie_Matinee], 
+    [Theatres].[Theatre_Movie_FShow] AS [Theatre_Movie_FShow], 
+    [Theatres].[Theatre_Movie_SShow] AS [Theatre_Movie_SShow]
+    FROM [dbo].[Theatres] AS [Theatres]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
