@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\users\vamsi.gamidi\source\repos\DBFirst\DBFirst\obj\Debug\
+D:\VamsiCode\DBFirst\DBFirst\obj\Debug\
 DBFirst
 none
 false
 DEBUG;TRACE
-c:\users\vamsi.gamidi\source\repos\DBFirst\DBFirst\App.xaml
-11151548125
+D:\VamsiCode\DBFirst\DBFirst\App.xaml
+31690531767
 21750853300
-141421877074
-181308230214
-MainWindow.xaml;
+17-1522691492
+181571155813
+MainWindow.xaml;PlayerView.xaml;StartUpWindow.xaml;
 
 False
 

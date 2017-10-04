@@ -16,3 +16,12 @@ D:\Code\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.csproj.CoreCom
 D:\Code\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.AssemblyInfo.cs
 D:\Code\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.dll
 D:\Code\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.pdb
+D:\VamsiCode\MVVM\ClassLibrary1\bin\Debug\netstandard1.4\ClassLibrary1.deps.json
+D:\VamsiCode\MVVM\ClassLibrary1\bin\Debug\netstandard1.4\ClassLibrary1.dll
+D:\VamsiCode\MVVM\ClassLibrary1\bin\Debug\netstandard1.4\ClassLibrary1.pdb
+D:\VamsiCode\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.csprojResolveAssemblyReference.cache
+D:\VamsiCode\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.csproj.ResolveComReference.cache
+D:\VamsiCode\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.csproj.CoreCompileInputs.cache
+D:\VamsiCode\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.AssemblyInfo.cs
+D:\VamsiCode\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.dll
+D:\VamsiCode\MVVM\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.pdb

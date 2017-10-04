@@ -12,6 +12,8 @@ namespace MVVM
 
         public PlayerModel _playerModel;
 
+
+
         public PlayerModel Model
         {
             get { return _playerModel; }

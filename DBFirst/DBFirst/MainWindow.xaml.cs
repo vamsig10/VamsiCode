@@ -1,23 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.Entity;
 using System.Data.Entity.Core.EntityClient;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
-using System.Runtime.Remoting.Contexts;
+using System.Linq;
+using System.Windows;
 
 namespace DBFirst
 {
@@ -26,32 +14,34 @@ namespace DBFirst
     /// </summary>
     public partial class MainWindow : Window
     {
+        Franchise obj = new Franchise();
+
         public MainWindow()
         {
             InitializeComponent();
-            using (var ctx=new Vamsi_Gamidi_DBEntities())
+            using (var ctx = new Vamsi_Gamidi_DBEntities())
             {
-                //  Franchise franchise = new Franchise() {Id = 12354, Franchise1 = "sefwee", Owner = "asdfasfd"};               
-                // ctx.SaveChanges();
+                Franchise franchise1 = new Franchise() { Id = 5, Franchise1 = "CSK", Owner = "Srinivasan" };
+                //ctx.Franchises.Add(franchise1);
                 ctx.Configuration.AutoDetectChangesEnabled = true;
-                 var query = from ipl in ctx.IPLs where ipl.Role=="Batsman" select ipl.Name ;
+                var query = from ipl in ctx.IPLs where ipl.Role == "Batsman" select ipl.Name;
                 var player = query.FirstOrDefault() ?? throw new ArgumentNullException($"query.FirstOrDefault()");
-                MessageBox.Show(player.ToString());
+              //  MessageBox.Show(player.ToString());
 
                 string sqlquery = "select value st from Vamsi_Gamidi_DBEntities.IPLs" + " as st where st.Id==1";
                 var objctx = (ctx as IObjectContextAdapter).ObjectContext;
                 ObjectQuery<IPL> ipl1 = objctx.CreateQuery<IPL>(sqlquery);
                 IPL newStudent = ipl1.FirstOrDefault<IPL>() ?? throw new ArgumentNullException($"ipl1.FirstOrDefault<IPL>()");
-                MessageBox.Show(newStudent.Role);
+              //  MessageBox.Show(newStudent.Role);
 
                 var player1 = ctx.IPLs.Find(1);
                 var entry = ctx.Entry(player1);
-                MessageBox.Show(entry.Entity.GetType().Name);
-                MessageBox.Show(entry.State.ToString());
+              //  MessageBox.Show(entry.Entity.GetType().Name);
+               // MessageBox.Show(entry.State.ToString());
 
-
-
-
+                Franchise franchise2 = new Franchise() { Id = 6, Franchise1 = "RCB", Owner = "Malya" };
+                //ctx.Franchises.Add(franchise2);
+               // ctx.SaveChanges();
             }
 
             using (var con = new EntityConnection("name=Vamsi_Gamidi_DBEntities"))
@@ -71,8 +61,16 @@ namespace DBFirst
                 }
             }
 
-          
 
+            DataContext = obj;
+        }
+
+        public void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var ctx = new Vamsi_Gamidi_DBEntities();
+            ctx.Franchises.Add(obj);
+            ctx.SaveChanges();
+            MessageBox.Show("Inserted");
         }
     }
 }

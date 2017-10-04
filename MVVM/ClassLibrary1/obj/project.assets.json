@@ -3711,11 +3711,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Code\\MVVM\\ClassLibrary1\\ClassLibrary1.csproj",
+      "projectUniqueName": "D:\\VamsiCode\\MVVM\\ClassLibrary1\\ClassLibrary1.csproj",
       "projectName": "ClassLibrary1",
-      "projectPath": "D:\\Code\\MVVM\\ClassLibrary1\\ClassLibrary1.csproj",
+      "projectPath": "D:\\VamsiCode\\MVVM\\ClassLibrary1\\ClassLibrary1.csproj",
       "packagesPath": "C:\\Users\\vamsi.gamidi\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\MVVM\\ClassLibrary1\\obj\\",
+      "outputPath": "D:\\VamsiCode\\MVVM\\ClassLibrary1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vamsi.gamidi\\AppData\\Roaming\\NuGet\\NuGet.Config",
