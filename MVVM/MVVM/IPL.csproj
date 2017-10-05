@@ -59,7 +59,7 @@
     <Compile Include="DataDisplayView.xaml.cs">
       <DependentUpon>DataDisplayView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DBUtil.cs" />
+    <Compile Include="DBUtilInsert.cs" />
     <Compile Include="DbUtilRetreive.cs" />
     <Compile Include="FranchiseModel.cs" />
     <Compile Include="FranchiseView.xaml.cs">

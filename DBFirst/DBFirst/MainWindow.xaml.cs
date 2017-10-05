@@ -14,11 +14,15 @@ namespace DBFirst
     /// </summary>
     public partial class MainWindow : Window
     {
-        Franchise obj = new Franchise();
+        public FranchiseViewModel obj=new FranchiseViewModel();
+       
+
+      //  FranchiseViewModel obj = new FranchiseViewModel();
 
         public MainWindow()
         {
             InitializeComponent();
+            
             using (var ctx = new Vamsi_Gamidi_DBEntities())
             {
                 Franchise franchise1 = new Franchise() { Id = 5, Franchise1 = "CSK", Owner = "Srinivasan" };
@@ -61,16 +65,19 @@ namespace DBFirst
                 }
             }
 
-
             DataContext = obj;
+            
+            //  obj = new FranchiseViewModel(obj);
+
         }
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            var ctx = new Vamsi_Gamidi_DBEntities();
-            ctx.Franchises.Add(obj);
-            ctx.SaveChanges();
-            MessageBox.Show("Inserted");
+           
+            FranchiseViewModel a =new FranchiseViewModel(obj);
+      
+            
+            
         }
     }
 }

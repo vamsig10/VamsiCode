@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace MVVM
+﻿namespace MVVM
 {
     public class PlayerViewModel
     {
-
         public PlayerModel _playerModel;
 
-
-
-        public PlayerModel Model
-        {
-            get { return _playerModel; }
-        }
+        public PlayerModel Model => _playerModel;
 
         public int Id
         {
@@ -53,13 +40,12 @@ namespace MVVM
         public PlayerViewModel(PlayerModel details)
         {
             _playerModel = details;
-
-            
         }
+
         public void Save()
         {
             DbUtil util = new DbUtil();
-            util.Enter_Player_Details("IPL",_playerModel );
+            util.Enter_Player_Details("IPL", _playerModel);
         }
     }
 }
