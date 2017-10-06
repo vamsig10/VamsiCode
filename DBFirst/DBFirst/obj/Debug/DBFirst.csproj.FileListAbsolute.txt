@@ -43,3 +43,4 @@ D:\VamsiCode\DBFirst\DBFirst\obj\Debug\DBFirst.csproj.GenerateResource.Cache
 D:\VamsiCode\DBFirst\DBFirst\obj\Debug\DBFirst.csproj.CoreCompileInputs.cache
 D:\VamsiCode\DBFirst\DBFirst\obj\Debug\DBFirst.exe
 D:\VamsiCode\DBFirst\DBFirst\obj\Debug\DBFirst.pdb
+D:\VamsiCode\DBFirst\DBFirst\obj\Debug\DBFirst.csprojResolveAssemblyReference.cache
