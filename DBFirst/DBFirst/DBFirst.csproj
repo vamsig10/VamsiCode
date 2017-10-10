@@ -93,6 +93,7 @@
       <DependentUpon>PlayerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlayerViewModel.cs" />
+    <Compile Include="SaveChanges.cs" />
     <Compile Include="StartUpWindow.xaml.cs">
       <DependentUpon>StartUpWindow.xaml</DependentUpon>
     </Compile>
