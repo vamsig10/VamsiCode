@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBFirst
+namespace DependencyInjection
 {
-   public class DisplayModel
+   public interface IService
     {
-         
+        void Serve();
+        int Serve2(int a,int b);
+
     }
 }

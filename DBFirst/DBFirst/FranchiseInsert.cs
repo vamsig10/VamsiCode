@@ -15,9 +15,9 @@ namespace DBFirst
         {
             this._franchiseModel = franchiseModel;
             var ctx = new Vamsi_Gamidi_DBEntities();
-               ctx.Franchises.Add(franchiseModel);
-              ctx.SaveChanges();
-               MessageBox.Show("Inserted");
+                ctx.Franchises.Add(franchiseModel);
+                ctx.SaveChanges();
+                MessageBox.Show("Inserted");
         }
 
     }

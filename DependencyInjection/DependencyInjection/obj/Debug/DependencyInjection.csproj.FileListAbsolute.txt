@@ -1,0 +1,7 @@
+D:\VamsiCode\DependencyInjection\DependencyInjection\obj\Debug\DependencyInjection.csprojResolveAssemblyReference.cache
+D:\VamsiCode\DependencyInjection\DependencyInjection\obj\Debug\DependencyInjection.csproj.CoreCompileInputs.cache
+D:\VamsiCode\DependencyInjection\DependencyInjection\bin\Debug\DependencyInjection.exe.config
+D:\VamsiCode\DependencyInjection\DependencyInjection\bin\Debug\DependencyInjection.exe
+D:\VamsiCode\DependencyInjection\DependencyInjection\bin\Debug\DependencyInjection.pdb
+D:\VamsiCode\DependencyInjection\DependencyInjection\obj\Debug\DependencyInjection.exe
+D:\VamsiCode\DependencyInjection\DependencyInjection\obj\Debug\DependencyInjection.pdb

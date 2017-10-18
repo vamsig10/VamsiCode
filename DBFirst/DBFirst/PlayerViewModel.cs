@@ -14,7 +14,15 @@ namespace DBFirst
       private Dictionary<string, Tuple<string,string>> ChangesDictionary;
         public IPL _playerModel;
 
-        public IPL Model
+      private IPlayerInsert _iplayerInsert;
+
+      public IPlayerInsert IplayerInsert
+      {
+          get { return _iplayerInsert; }
+          set { _iplayerInsert = value; }
+      }
+
+      public IPL Model
         {
             get { return _playerModel; }
         }
@@ -138,7 +146,10 @@ namespace DBFirst
                 Age = details.Age
             };
             _playerModel = a;
-            PlayerInsert insert = new PlayerInsert(_playerModel);
+            PlayerInsert insert = new PlayerInsert();
+        //    insert.PlayerInsertMethod(_playerModel);
+            IplayerInsert=new PlayerInsert();
+            IplayerInsert.PlayerInsertMethod(_playerModel);
         }
         
         public PlayerViewModel()

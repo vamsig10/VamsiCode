@@ -93,7 +93,8 @@ namespace DBFirst
             };
 
             _playerModel = a;
-            PlayerInsert Insert = new PlayerInsert(_playerModel);
+            PlayerInsert Insert = new PlayerInsert();
+            Insert.PlayerInsertMethod(_playerModel);
 
 
 

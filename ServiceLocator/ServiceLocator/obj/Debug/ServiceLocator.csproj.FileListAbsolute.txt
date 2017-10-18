@@ -1,0 +1,7 @@
+D:\VamsiCode\ServiceLocator\ServiceLocator\bin\Debug\ServiceLocator.exe.config
+D:\VamsiCode\ServiceLocator\ServiceLocator\bin\Debug\ServiceLocator.exe
+D:\VamsiCode\ServiceLocator\ServiceLocator\bin\Debug\ServiceLocator.pdb
+D:\VamsiCode\ServiceLocator\ServiceLocator\obj\Debug\ServiceLocator.csprojResolveAssemblyReference.cache
+D:\VamsiCode\ServiceLocator\ServiceLocator\obj\Debug\ServiceLocator.csproj.CoreCompileInputs.cache
+D:\VamsiCode\ServiceLocator\ServiceLocator\obj\Debug\ServiceLocator.exe
+D:\VamsiCode\ServiceLocator\ServiceLocator\obj\Debug\ServiceLocator.pdb
