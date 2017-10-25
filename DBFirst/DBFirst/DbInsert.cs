@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using LightInject;
 
 namespace DBFirst
 {
@@ -16,6 +17,10 @@ namespace DBFirst
             
             ctx.SaveChanges();
             MessageBox.Show("Inserted");
+
+
+            var container=new LightInject.ServiceContainer();
+            
         }
     }
 }
